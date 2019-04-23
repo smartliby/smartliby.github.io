@@ -1,0 +1,1375 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Neucha:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="java,门面模式,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="门面模式简介门面模式是对象的结构模式，外部与一个子系统的通信必须通过一个统一的门面对象进行。门面模式提供一个高层次的接口，使得子系统更易于使用。 举个例子，病人去医院看病，如果把医院作为一个子系统，按照部门职能，这个系统可以划分为挂号、门诊、划价、化验、收费、取药等。看病的病人要与这些部门打交道，就如同一个子系统的客户端与一个子系统的各个类打交道一样，不是一件容易的事情：首先病人必须先挂号，然后门">
+<meta name="keywords" content="java,门面模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式13之 门面(Facade)模式(结构模式)">
+<meta property="og:url" content="https://smartliby.github.io/2014/05/26/设计模式13之-门面-Facade-模式-结构模式/index.html">
+<meta property="og:site_name" content="以梦为马">
+<meta property="og:description" content="门面模式简介门面模式是对象的结构模式，外部与一个子系统的通信必须通过一个统一的门面对象进行。门面模式提供一个高层次的接口，使得子系统更易于使用。 举个例子，病人去医院看病，如果把医院作为一个子系统，按照部门职能，这个系统可以划分为挂号、门诊、划价、化验、收费、取药等。看病的病人要与这些部门打交道，就如同一个子系统的客户端与一个子系统的各个类打交道一样，不是一件容易的事情：首先病人必须先挂号，然后门">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://smartliby.github.io/images/media/pattern13_01.jpg">
+<meta property="og:image" content="https://smartliby.github.io/images/media/pattern13_02.jpg">
+<meta property="og:image" content="https://smartliby.github.io/images/media/pattern13_03.jpg">
+<meta property="og:image" content="https://smartliby.github.io/images/media/pattern13_04.jpg">
+<meta property="og:image" content="https://smartliby.github.io/images/media/pattern13_05.jpg">
+<meta property="og:updated_time" content="2019-04-22T15:23:58.617Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式13之 门面(Facade)模式(结构模式)">
+<meta name="twitter:description" content="门面模式简介门面模式是对象的结构模式，外部与一个子系统的通信必须通过一个统一的门面对象进行。门面模式提供一个高层次的接口，使得子系统更易于使用。 举个例子，病人去医院看病，如果把医院作为一个子系统，按照部门职能，这个系统可以划分为挂号、门诊、划价、化验、收费、取药等。看病的病人要与这些部门打交道，就如同一个子系统的客户端与一个子系统的各个类打交道一样，不是一件容易的事情：首先病人必须先挂号，然后门">
+<meta name="twitter:image" content="https://smartliby.github.io/images/media/pattern13_01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://smartliby.github.io/2014/05/26/设计模式13之-门面-Facade-模式-结构模式/">
+
+
+
+
+
+  <title> 设计模式13之 门面(Facade)模式(结构模式) | 以梦为马 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?04528dfe051ff7bae4ef51896afc54ad";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">以梦为马</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description"></h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://smartliby.github.io/2014/05/26/设计模式13之-门面-Facade-模式-结构模式/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="James Lee">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/images/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="以梦为马">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="以梦为马" src="/images/tx.jpg">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                设计模式13之 门面(Facade)模式(结构模式)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-05-26T11:09:23+08:00">
+                2014-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2014/05/26/设计模式13之-门面-Facade-模式-结构模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2014/05/26/设计模式13之-门面-Facade-模式-结构模式/" class="leancloud_visitors" data-flag-title="设计模式13之 门面(Facade)模式(结构模式)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+ 
+        
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="门面模式简介"><a href="#门面模式简介" class="headerlink" title="门面模式简介"></a>门面模式简介</h1><p>门面模式是对象的结构模式，外部与一个子系统的通信必须通过一个统一的门面对象进行。门面模式提供一个高层次的接口，使得子系统更易于使用。</p>
+<p>举个例子，<br>病人去医院看病，如果把医院作为一个子系统，按照部门职能，这个系统可以划分为挂号、门诊、划价、化验、收费、取药等。看病的病人要与这些部门打交道，就如同一个子系统的客户端与一个子系统的各个类打交道一样，不是一件容易的事情：首先病人必须先挂号，然后门诊；如果医生要求化验，病人必须首先划价，然后缴费，才可以到化验部门做化验；化验后再回到门诊室。如下图所示：</p>
+<a id="more"></a>
+<p><img src="/images/media/pattern13_01.jpg" alt="pattern13_01"></p>
+<p>而如果引”进门面模式”，在医院中增加一个接待员。由接待员负责代为挂号、划价、缴费、取药等，病人只接触接待员，由接待员与各个部门打交道。这样，对病人来说，就会简单很多。如下图所示：<br><img src="/images/media/pattern13_02.jpg" alt="pattern13_02"></p>
+<p>下面看看门面模式的UML类图：<br><img src="/images/media/pattern13_03.jpg" alt="pattern13_03"></p>
+<p>门面模式包括2个角色：<strong>门面(Facade)，子系统(SubSystem)</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>门 面</td>
+<td>客户端可以调用这个角色的方法。此角色知晓相关的（一个或者多个）子系统的功能和责任。在正常情况下，本角色会将所有从客户端发来的请求委派到相应的子系统去。</td>
+</tr>
+<tr>
+<td>子系统</td>
+<td>可以同时有一个或者多个子系统。每个子系统都不是一个单独的类，而是一个类的集合。每个子系统都可以被客户端直接调用，或者被门面角色调用。子系统并不知道门面的存在，对于子系统而言，门面仅仅是另外一个客户端而已。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="门面模式示例"><a href="#门面模式示例" class="headerlink" title="门面模式示例"></a>门面模式示例</h1><p>一个保安系统由两个录像机、三个电灯、一个遥控器和一个警报器组成。保安系统的操作人员在早上上班的时候，将这些仪器打开；晚上下班之后，会将这些仪器关闭。</p>
+<p>我们先演示在不使用”门面模式”的情况下，实现该系统。然后，通过”门面模式”实现该系统。</p>
+<h2 id="未使用”门面模式”"><a href="#未使用”门面模式”" class="headerlink" title="未使用”门面模式”"></a>未使用”门面模式”</h2><p>UML类图如下：<br><img src="/images/media/pattern13_04.jpg" alt="pattern13_04"></p>
+<p>从图中可以看出，客户端Client对象需要引用到录像机(Camera)、电灯(Light)、感应器(Sensor)和报警器(Alarm)所有的对象。</p>
+<p>客户端(Client)源码</p>
+<pre><code>public class Client {
+
+    private static Camera camera1, camera2;
+    private static Light light1, light2, light3;
+    private static Sensor sensor;
+    private static Alarm alarm;
+
+    public static void main(String[] args) {
+        camera1 = new Camera();
+        camera2 = new Camera();
+        light1 = new Light();
+        light2 = new Light();
+        light3 = new Light();
+        sensor = new Sensor();
+        alarm = new Alarm();
+
+        camera1.turnOn();
+        camera2.turnOn();
+        light1.turnOn();
+        light2.turnOn();
+        light3.turnOn();
+        sensor.activate();
+        alarm.activate();
+    }
+}
+</code></pre><p>录像机(Camera)源码</p>
+<pre><code>public class Camera {
+    // 打开录像机
+    public void turnOn() {
+        System.out.println(&quot;Turning on the camera.&quot;);
+    }
+    // 关闭录像机
+    public void turnOff() {
+        System.out.println(&quot;Turning off the camera.&quot;);
+    }
+    // 转动录像机
+    public void rotate(int degrees) {
+        System.out.println(&quot;Rotating the camera by &quot;+degrees+&quot; degrees.&quot;);
+    }
+}
+</code></pre><p>电灯(Light)源码</p>
+<pre><code>public class Light {
+    // 打开灯
+    public void turnOn() {
+        System.out.println(&quot;Turning on the light.&quot;);
+    }
+    // 关闭灯
+    public void turnOff() {
+        System.out.println(&quot;Turning off the light.&quot;);
+    }
+    // 换灯泡
+    public void changeBulb() {
+        System.out.println(&quot;Cotating the light-bulb.&quot;);
+    }
+}
+</code></pre><p>感应器(Sensor)源码</p>
+<pre><code>public class Sensor {
+    // 启动感应器
+    public void activate() {
+        System.out.println(&quot;Activating on the sensor.&quot;);
+    }
+    // 关闭感应器
+    public void deactivate() {
+        System.out.println(&quot;Deactivating the sensor.&quot;);
+    }
+    // 触发感应器
+    public void trigger() {
+        System.out.println(&quot;The sensor has been triggered.&quot;);
+    }
+}
+</code></pre><p>报警器(Alarm)源码</p>
+<pre><code>public class Alarm {
+    // 启动警报器
+    public void activate() {
+        System.out.println(&quot;Activating on the alarm.&quot;);
+    }
+    // 关闭警报器
+    public void deactivate() {
+        System.out.println(&quot;Deactivating the alarm.&quot;);
+    }
+    // 拉响警报器
+    public void ring() {
+        System.out.println(&quot;Ringing the alarm&quot;);
+    }
+    // 停掉警报器
+    public void stopRing() {
+        System.out.println(&quot;Stop the alarm&quot;);
+    }
+}
+</code></pre><p>运行结果：</p>
+<pre><code>Turning on the camera.
+Turning on the camera.
+Turning on the light.
+Turning on the light.
+Turning on the light.
+Activating on the sensor.
+Activating on the alarm.
+</code></pre><h2 id="使用”门面模式”"><a href="#使用”门面模式”" class="headerlink" title="使用”门面模式”"></a>使用”门面模式”</h2><p>UML类图如下：<br><img src="/images/media/pattern13_05.jpg" alt="pattern13_05"></p>
+<p>可以看出：门面SecurityFade承担了与保安系统内部各个对象打交道的任务，而客户对象只需要与门面对象打交道即可。SecurityFade是客户端与保安系统之间的一个门户，它使得客户端与子系统之间的关系变得简单和易于管理。</p>
+<p>客户端(Client)源码</p>
+<pre><code>public class Client {
+
+    private static SecurityFacade security;
+
+    public static void main(String[] args) {
+        security = new SecurityFacade();
+        security.activate();
+    }
+}
+</code></pre><p>门面(SecurityFade)源码</p>
+<pre><code>public class SecurityFacade {
+
+    private Camera camera1, camera2;
+    private Light light1, light2, light3;
+    private Sensor sensor;
+    private Alarm alarm;
+
+    public SecurityFacade() {
+        camera1 = new Camera();
+        camera2 = new Camera();
+        light1 = new Light();
+        light2 = new Light();
+        light3 = new Light();
+        sensor = new Sensor();
+        alarm = new Alarm();
+    }
+
+    public void activate() {
+        camera1.turnOn();
+        camera2.turnOn();
+        light1.turnOn();
+        light2.turnOn();
+        light3.turnOn();
+        sensor.activate();
+        alarm.activate();
+    }
+
+    public void deactivate() {
+        camera1.turnOff();
+        camera2.turnOff();
+        light1.turnOff();
+        light2.turnOff();
+        light3.turnOff();
+        sensor.deactivate();
+        alarm.deactivate();
+    }
+
+}
+</code></pre><p>录像机(Camera)源码</p>
+<pre><code>public class Camera {
+    // 打开录像机
+    public void turnOn() {
+        System.out.println(&quot;Turning on the camera.&quot;);
+    }
+    // 关闭录像机
+    public void turnOff() {
+        System.out.println(&quot;Turning off the camera.&quot;);
+    }
+    // 转动录像机
+    public void rotate(int degrees) {
+        System.out.println(&quot;Rotating the camera by &quot;+degrees+&quot; degrees.&quot;);
+    }
+}
+</code></pre><p>电灯(Light)源码</p>
+<pre><code>public class Light {
+    // 打开灯
+    public void turnOn() {
+        System.out.println(&quot;Turning on the light.&quot;);
+    }
+    // 关闭灯
+    public void turnOff() {
+        System.out.println(&quot;Turning off the light.&quot;);
+    }
+    // 换灯泡
+    public void changeBulb() {
+        System.out.println(&quot;Cotating the light-bulb.&quot;);
+    }
+}
+</code></pre><p>感应器(Sensor)源码</p>
+<pre><code>public class Sensor {
+    // 启动感应器
+    public void activate() {
+        System.out.println(&quot;Activating on the sensor.&quot;);
+    }
+    // 关闭感应器
+    public void deactivate() {
+        System.out.println(&quot;Deactivating the sensor.&quot;);
+    }
+    // 触发感应器
+    public void trigger() {
+        System.out.println(&quot;The sensor has been triggered.&quot;);
+    }
+}
+</code></pre><p>报警器(Alarm)源码</p>
+<pre><code>public class Alarm {
+    // 启动警报器
+    public void activate() {
+        System.out.println(&quot;Activating on the alarm.&quot;);
+    }
+    // 关闭警报器
+    public void deactivate() {
+        System.out.println(&quot;Deactivating the alarm.&quot;);
+    }
+    // 拉响警报器
+    public void ring() {
+        System.out.println(&quot;Ringing the alarm&quot;);
+    }
+    // 停掉警报器
+    public void stopRing() {
+        System.out.println(&quot;Stop the alarm&quot;);
+    }
+}
+</code></pre><p>运行结果：</p>
+<pre><code>Turning on the camera.
+Turning on the camera.
+Turning on the light.
+Turning on the light.
+Turning on the light.
+Activating on the sensor.
+Activating on the alarm.
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+  
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/门面模式/" rel="tag"># 门面模式</a>
+          
+        </div>
+      
+
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>🐶 您的支持将鼓励我继续创作 🐶</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赞赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-img.png" alt="James Lee WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-img.jpg" alt="James Lee Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+         
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/05/25/设计模式12之-享元-Flyweight-模式-结构模式/" rel="next" title="设计模式12之 享元(Flyweight)模式(结构模式)">
+                <i class="fa fa-chevron-left"></i> 设计模式12之 享元(Flyweight)模式(结构模式)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/05/27/设计模式14之-桥梁-Bridge-模式-结构模式/" rel="prev" title="设计模式14之 桥梁(Bridge)模式(结构模式)">
+                设计模式14之 桥梁(Bridge)模式(结构模式) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          <div id="gitalk-container"></div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/tx.jpg" alt="James Lee">
+          <p class="site-author-name" itemprop="name">James Lee</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/smartliby" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/liboyuma" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.woaitqs.cc/" title="Qisen Tang" target="_blank">Qisen Tang</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://szhshp.org" title="szhshp的博客" target="_blank">szhshp的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://python.zhangwei.website" title="JuniorCoder" target="_blank">JuniorCoder</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hippo-jessy.com" title="Hippo" target="_blank">Hippo</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.zhihu.com/people/lippi-ouyang" title="友链出租" target="_blank">友链出租</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#门面模式简介"><span class="nav-number">1.</span> <span class="nav-text">门面模式简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#门面模式示例"><span class="nav-number">2.</span> <span class="nav-text">门面模式示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#未使用”门面模式”"><span class="nav-number">2.1.</span> <span class="nav-text">未使用”门面模式”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用”门面模式”"><span class="nav-number">2.2.</span> <span class="nav-text">使用”门面模式”</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">James Lee</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "a9173c686e0149e59a3f33de3489ab05",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("2Oz6yRFkJEwXvXQVPvGbySNB-gzGzoHsz", "QPGnqrbCuCne9Ib9AVWLu5gD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

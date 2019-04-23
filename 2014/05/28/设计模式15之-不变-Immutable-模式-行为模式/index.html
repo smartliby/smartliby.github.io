@@ -1,0 +1,1294 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Neucha:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="java,不变模式,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="不变模式简介一个对象的状态在对象被创建之后就不再变化，这就是所谓的不变(Immutable)模式。">
+<meta name="keywords" content="java,不变模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式15之 不变(Immutable)模式(行为模式)">
+<meta property="og:url" content="https://smartliby.github.io/2014/05/28/设计模式15之-不变-Immutable-模式-行为模式/index.html">
+<meta property="og:site_name" content="以梦为马">
+<meta property="og:description" content="不变模式简介一个对象的状态在对象被创建之后就不再变化，这就是所谓的不变(Immutable)模式。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-22T15:23:58.761Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式15之 不变(Immutable)模式(行为模式)">
+<meta name="twitter:description" content="不变模式简介一个对象的状态在对象被创建之后就不再变化，这就是所谓的不变(Immutable)模式。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://smartliby.github.io/2014/05/28/设计模式15之-不变-Immutable-模式-行为模式/">
+
+
+
+
+
+  <title> 设计模式15之 不变(Immutable)模式(行为模式) | 以梦为马 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?04528dfe051ff7bae4ef51896afc54ad";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">以梦为马</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description"></h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://smartliby.github.io/2014/05/28/设计模式15之-不变-Immutable-模式-行为模式/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="James Lee">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/images/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="以梦为马">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="以梦为马" src="/images/tx.jpg">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                设计模式15之 不变(Immutable)模式(行为模式)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-05-28T11:10:00+08:00">
+                2014-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2014/05/28/设计模式15之-不变-Immutable-模式-行为模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2014/05/28/设计模式15之-不变-Immutable-模式-行为模式/" class="leancloud_visitors" data-flag-title="设计模式15之 不变(Immutable)模式(行为模式)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+ 
+        
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="不变模式简介"><a href="#不变模式简介" class="headerlink" title="不变模式简介"></a>不变模式简介</h1><p>一个对象的状态在对象被创建之后就不再变化，这就是所谓的不变(Immutable)模式。</p>
+<a id="more"></a>
+<h2 id="不变模式的结构"><a href="#不变模式的结构" class="headerlink" title="不变模式的结构"></a>不变模式的结构</h2><p>　　不变模式可增强对象的强壮型(robustness)。不变模式允许多个对象共享某一个对象，降低了对该对象进行并发访问时的同步化开销。如果需要修改一个不变对象的状态，那么就需要建立一个新的同类型对象，并在创建时将这个新的状态存储在新对象里。</p>
+<p>　　不变模式只涉及到一个类。一个类的内部状态创建后，在整个生命周期都不会发生变化时，这样的类称作不变类。这种使用不变类的做法叫做不变模式。不变模式有两种形式：一种是弱不变模式，另一种是强不变模式。</p>
+<h2 id="弱不变模式"><a href="#弱不变模式" class="headerlink" title="弱不变模式"></a>弱不变模式</h2><p>　　一个类的实例的状态是不可改变的；但是这个类的子类的实例具有可能会变化的状态。这样的类符合弱不变模式的定义。要实现弱不变模式，一个类必须满足下面条件：</p>
+<p>(01) 所考虑的对象没有任何方法会修改对象的状态；这样一来，当对象的构造函数将对象的状态初始化之后，对象的状态便不再改变。<br>(02) 所有属性都应当是私有的。不要声明任何的公开的属性，以防客户端对象直接修改任何的内部状态。<br>(03) 这个对象所引用到的其他对象如何是可变对象的话，必须设法限制外界对这些可变对象的访问，以防止外界修改这些对象。如何可能，应当尽量在不变对象内部初始化这些被引用的对象，而不要在客户端初始化，然后再传入到不变对象内部来。如果某个可变对象必须在客户端初始化，然后再传入到不变对象里的话，就应当考虑在不变对象初始化的时候，将这个可变对象复制一份，而不要使用原来的拷贝。</p>
+<p>弱不变模式的缺点是：<br>第一, 一个弱不变对象的子对象可以是可变对象；换言之，一个弱不变对象的子对象可能是可变的。<br>第二, 这个可变的子对象可能可以修改父对象的状态，从而可能会允许外界修改父对象的状态。</p>
+<h2 id="强不变模式"><a href="#强不变模式" class="headerlink" title="强不变模式"></a>强不变模式</h2><p>　　一个类的实例不会改变，同时它的子类的实例也具有不可变化的状态。这样的类符合强不变模式。要实现强不变模式，一个类必须首先满足弱不变模式所要求的所有条件，并且还有满足下面条件之一：<br>(01) 所考虑的类所有的方法都应当是final，这样这个类的子类不能够置换掉此类的方法。<br>(02) 这个类本身就是final的，那么这个类就不可能会有子类，从而也就不可能有被子类修改的问题。</p>
+<h1 id="不变模式示例"><a href="#不变模式示例" class="headerlink" title="不变模式示例"></a>不变模式示例</h1><p>通过以下几个示例来看看”弱不变模式”和”强不变模式”。</p>
+<h2 id="可变模式"><a href="#可变模式" class="headerlink" title="可变模式"></a>可变模式</h2><pre><code>class Person {
+    private String name;
+    private int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public void setName(String name) { this.name = name; }
+    public String getName() { return name; }
+    public void setAge(int age) { this.age = age; }
+    public int getAge() { return age; }
+
+    public String toString() {
+        return &quot;name:&quot;+name+&quot;, age:&quot;+age;
+    }
+}
+
+// Complex不是&quot;弱不变类&quot;。
+// 因为它包含了可变类对象person，并且person是在外部初始化的。
+class Complex {
+    private Person person;
+    private int id;
+
+    public Complex (Person person, int id) {
+        this.person = person;
+        this.id = id;
+    }
+
+    public int getId() { return id; }
+    public Person getPerson() { return person; }
+
+    public String toString() {
+        return &quot;id:&quot;+id+&quot;, person(&quot;+person+&quot;)&quot;;
+    }
+}
+
+public class MutableDemo {
+    public static void main(String[] args) {
+        // 新建Complex对象，在&quot;外部(即，非Complex内部)&quot;初始化person。
+        Person person = new Person(&quot;张三&quot;, 18);
+        Complex com = new Complex(person, 1);
+        System.out.println(com);
+
+        // 修改person的名字为&quot;李四&quot;，年龄为20
+        person.setName(&quot;李四&quot;);
+        person.setAge(20);
+        System.out.println(com);
+    }
+}
+</code></pre><p>运行结果：</p>
+<pre><code>id:1, person(name:张三, age:18)
+id:1, person(name:李四, age:20)
+</code></pre><p>结果说明：<br>MutableDemo中的Complex类满足”弱不变模式”的前2个条件：<br>(01) Complex中没有方法可以修改对象的状态。Complex包含了person和id两个属性值，但是没有方法修改这两个树形。<br>(02) Complex中的person和id属性都是私有的。<br>　　但是，Complex不满足”若不变模式”的第3个条件。Complex引用了”可变类对象person”，person是Person类的对象，而Person是一个可变类！<br>　　所以，在MutableDemo中，我们初始化了Complex的person值为(“张三”,18)之后；在后面修改了person的名字为”李四”,年龄为18。Complex中的person的值也会相应的改变！所以，Complex是”可变类”。</p>
+<p>　　若想将Complex修改为”不变类”，需要将Complex修改的满足”若不变模式”的第3个条件。方法是，在Complex中初始化person的时候，创建一个person的拷贝即可。详细代码请看”2. 弱不变模式”。</p>
+<h2 id="弱不变模式-1"><a href="#弱不变模式-1" class="headerlink" title="弱不变模式"></a>弱不变模式</h2><pre><code>class Person {
+    private String name;
+    private int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public void setName(String name) { this.name = name; }
+    public String getName() { return name; }
+    public void setAge(int age) { this.age = age; }
+    public int getAge() { return age; }
+
+    public String toString() {
+        return &quot;name:&quot;+name+&quot;, age:&quot;+age;
+    }
+}
+
+// Complex是&quot;弱不变类&quot;。
+// 它虽然包含了可变的外部对象person，但是Complex内部的person是不会改变的。因为它保存的是person的拷贝。
+class Complex {
+    private Person person;
+    private int id;
+
+    public Complex (Person person, int id) {
+        // 新建一个person的拷贝。
+        this.person = new Person(person.getName(), person.getAge());
+        this.id = id;
+    }
+
+    public int getId() { return id; }
+    public Person getPerson() { return person; }
+
+    public String toString() {
+        return &quot;id:&quot;+id+&quot;, person(&quot;+person+&quot;)&quot;;
+    }
+}
+
+public class WeakImmutable {
+    public static void main(String[] args) {
+        // 新建Complex对象。
+        // id是1, person的名字是&quot;张三&quot;，年龄是18
+        Person person = new Person(&quot;张三&quot;, 18);
+        Complex com = new Complex(person, 1);
+        System.out.println(com);
+
+        // 修改person的名字为&quot;李四&quot;，年龄为20
+        person.setName(&quot;李四&quot;);
+        person.setAge(20);
+        System.out.println(com);
+    }
+}
+</code></pre><p>运行结果：</p>
+<pre><code>id:1, person(name:张三, age:18)
+id:1, person(name:张三, age:18)
+</code></pre><p>结果说明：WeakImmutable相比MutableDemo，只对Complex的构造函数进行了修改。Complex同时满足”弱不变模式”的3个条件，因此，它就是个不变模式。</p>
+<h2 id="强不变模式-1"><a href="#强不变模式-1" class="headerlink" title="强不变模式"></a>强不变模式</h2><pre><code>class Person {
+    private String name;
+    private int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public void setName(String name) { this.name = name; }
+    public String getName() { return name; }
+    public void setAge(int age) { this.age = age; }
+    public int getAge() { return age; }
+
+    public String toString() {
+        return &quot;name:&quot;+name+&quot;, age:&quot;+age;
+    }
+}
+
+// Complex是&quot;强不变类&quot;。
+final class Complex {
+    private final Person person;
+    private final int id;
+
+    public Complex (Person person, int id) {
+        // 新建一个person的拷贝。
+        this.person = new Person(person.getName(), person.getAge());
+        this.id = id;
+    }
+
+    public final int getId() { return id; }
+    public final Person getPerson() { return person; }
+
+    public String toString() {
+        return &quot;id:&quot;+id+&quot;, person(&quot;+person+&quot;)&quot;;
+    }
+}
+
+public class StrongImmutable {
+    public static void main(String[] args) {
+        // 新建Complex对象。
+        // id是1, person的名字是&quot;张三&quot;，年龄是18
+        Person person = new Person(&quot;张三&quot;, 18);
+        Complex com = new Complex(person, 1);
+        System.out.println(com);
+
+        // 修改person的名字为&quot;李四&quot;，年龄为20
+        person.setName(&quot;李四&quot;);
+        person.setAge(20);
+        System.out.println(com);
+    }
+}
+</code></pre><p>运行结果：</p>
+<pre><code>id:1, person(name:张三, age:18)
+id:1, person(name:张三, age:18)
+</code></pre><p>结果说明：<br>StrongImmutable中的Complex满足”强不变模式”的要求。StrongImmutable相比WeakImmutable，进行了两个修改：<br>第一，将Complex中的属性和方法都修改为final类型。<br>第二，将Complex类本身修改为final类型。</p>
+<h1 id="不变模式的优缺点"><a href="#不变模式的优缺点" class="headerlink" title="不变模式的优缺点"></a>不变模式的优缺点</h1><p>不变模式有很明显的优点：<br>(1) 因为不能修改一个不变对象的状态，所以可以避免由此引起的不必要的程序错误；换言之，一个不变的对象要比可变的对象更加容易维护。<br>(2) 因为没有任何一个线程能够修改不变对象的内部状态，一个不变对象自动就是线程安全的，这样就可以省掉处理同步化的开销。一个不变对象可以自由地被不同的客户端共享。</p>
+<p>不变模式的缺点：<br>不变模式唯一的缺点是：一旦需要修改一个不变对象的状态，就只好创建一个新的同类对象。在需要频繁修改不变对象的环境里，会有大量的不变对象作为中间结果被创建出来，再被JAVA垃圾收集器收集走。这是一种资源上的浪费。</p>
+<p>在设计任何一个类的时候，应当慎重考虑其状态是否有需要变化的可能性。除非其状态有变化的必要，不然应当将它设计成不变类。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+  
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/不变模式/" rel="tag"># 不变模式</a>
+          
+        </div>
+      
+
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>🐶 您的支持将鼓励我继续创作 🐶</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赞赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-img.png" alt="James Lee WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-img.jpg" alt="James Lee Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+         
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/05/27/设计模式14之-桥梁-Bridge-模式-结构模式/" rel="next" title="设计模式14之 桥梁(Bridge)模式(结构模式)">
+                <i class="fa fa-chevron-left"></i> 设计模式14之 桥梁(Bridge)模式(结构模式)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/05/29/设计模式16之-策略-Strategy-模式-行为模式/" rel="prev" title="设计模式16之 策略(Strategy)模式(行为模式)">
+                设计模式16之 策略(Strategy)模式(行为模式) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          <div id="gitalk-container"></div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/tx.jpg" alt="James Lee">
+          <p class="site-author-name" itemprop="name">James Lee</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/smartliby" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/liboyuma" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.woaitqs.cc/" title="Qisen Tang" target="_blank">Qisen Tang</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://szhshp.org" title="szhshp的博客" target="_blank">szhshp的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://python.zhangwei.website" title="JuniorCoder" target="_blank">JuniorCoder</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hippo-jessy.com" title="Hippo" target="_blank">Hippo</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.zhihu.com/people/lippi-ouyang" title="友链出租" target="_blank">友链出租</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#不变模式简介"><span class="nav-number">1.</span> <span class="nav-text">不变模式简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不变模式的结构"><span class="nav-number">1.1.</span> <span class="nav-text">不变模式的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弱不变模式"><span class="nav-number">1.2.</span> <span class="nav-text">弱不变模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强不变模式"><span class="nav-number">1.3.</span> <span class="nav-text">强不变模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不变模式示例"><span class="nav-number">2.</span> <span class="nav-text">不变模式示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可变模式"><span class="nav-number">2.1.</span> <span class="nav-text">可变模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弱不变模式-1"><span class="nav-number">2.2.</span> <span class="nav-text">弱不变模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强不变模式-1"><span class="nav-number">2.3.</span> <span class="nav-text">强不变模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不变模式的优缺点"><span class="nav-number">3.</span> <span class="nav-text">不变模式的优缺点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">James Lee</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "a9173c686e0149e59a3f33de3489ab05",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("2Oz6yRFkJEwXvXQVPvGbySNB-gzGzoHsz", "QPGnqrbCuCne9Ib9AVWLu5gD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
