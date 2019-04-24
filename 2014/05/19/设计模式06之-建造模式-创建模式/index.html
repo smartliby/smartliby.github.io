@@ -758,7 +758,7 @@ send MSG[Subject: &quot;Goodbye subject!&quot;, Body: &quot;Goodbye body!&quot;]
         admin: ['smartliby'],
         labels: 'gitalk'.split(',').filter(l => l),
         perPage: 10,
-        id: md5(location.pathname),
+        id: md5(window.location.pathname),
         pagerDirection: 'last',
         createIssueManually: true,
         distractionFreeMode: true
