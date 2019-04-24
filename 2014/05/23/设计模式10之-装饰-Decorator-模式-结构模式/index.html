@@ -683,21 +683,22 @@ Flower Move
         
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-   <script type="text/javascript">
-        var gitalk = new Gitalk({
-          clientID: 'a1583845229156fa594a',
-          clientSecret: '888d0f868648be77cc2520b7fdd37ed63875b4d3',
-          repo: 'smartliby.github.io',
-          owner: 'smartliby',
-          admin: ['smartliby'],
-          labels: '',
-          perPage: 15,
-          pagerDirection: 'last',
-          createIssueManually: true,
-          distractionFreeMode: true
-        })
-        gitalk.render('gitalk-container')           
-       </script>
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'a1583845229156fa594a',
+        clientSecret: '888d0f868648be77cc2520b7fdd37ed63875b4d3',
+        repo: 'smartliby.github.io',
+        owner: 'smartliby',
+        admin: ['smartliby'],
+        labels: '',
+        perPage: 10,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: true
+      })
+      gitalk.render('gitalk-container')           
+  </script>
 
 
       
