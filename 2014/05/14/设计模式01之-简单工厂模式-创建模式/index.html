@@ -680,10 +680,9 @@ BadFruitException: Bad fruit request!
         repo: 'smartliby.github.io',
         owner: 'smartliby',
         admin: ['smartliby'],
-        labels: 'gitalk'.split(',').filter(l => l),
         perPage: 10,
         id: md5(window.location.pathname),
-        pagerDirection: 'last',
+        pagerDirection: '',
         createIssueManually: true,
         distractionFreeMode: true
       })
