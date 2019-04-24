@@ -790,6 +790,7 @@ com1==com2:false
         
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="/js/src/md5.min.js"></script>
   <div id="gitalk-container"></div>
   <script type="text/javascript">
       var gitalk = new Gitalk({
@@ -800,6 +801,7 @@ com1==com2:false
         admin: ['smartliby'],
         labels: 'gitalk'.split(',').filter(l => l),
         perPage: 10,
+        id: md5(location.pathname),
         pagerDirection: 'last',
         createIssueManually: true,
         distractionFreeMode: true
