@@ -657,22 +657,23 @@ CargoPlane fly.
     <div class="post-spread">
       
         
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script type="text/javascript">
-      const gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        repo: 'smartliby.github.io',
-        owner: '',
-        admin: ''.split(','),
-        pagerDirection: 'last',
-        // facebook-like distraction free mode
-        distractionFreeMode: false
-      })
-      gitalk.render('gitalk-container')
-    </script>
-  
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'a1583845229156fa594a',
+          clientSecret: '888d0f868648be77cc2520b7fdd37ed63875b4d3',
+          repo: 'smartliby.github.io',
+          owner: '',
+          admin: ['smartliby'],
+          labels: '',
+          perPage: 15,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: true
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
       
