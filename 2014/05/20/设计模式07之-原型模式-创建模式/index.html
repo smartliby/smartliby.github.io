@@ -629,7 +629,7 @@ public class Client {
         repo: 'smartliby.github.io',
         owner: 'smartliby',
         admin: ['smartliby'],
-        labels: '',
+        labels: 'gitalk'.split(',').filter(l => l),
         perPage: 10,
         pagerDirection: 'last',
         createIssueManually: true,
