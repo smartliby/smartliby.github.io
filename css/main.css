@@ -1907,7 +1907,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff39fc;
+  background: #1494ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2055,17 +2055,6 @@ img:hover {
 }
 .cc-license img {
   display: inline-block;
-}
-.cloud-tie-wrapper img {
-  display: inline-block;
-}
-.cloud-tie-wrapper .total-txt {
-  font-size: 1em !important;
-}
-.cloud-tie-join-count .join-count {
-  color: #555 !important;
-  font-size: inherit !important;
-  margin: 0 !important;
 }
 .post-spread {
   margin-top: 20px;
