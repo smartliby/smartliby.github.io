@@ -728,6 +728,26 @@ Horse
 
     <div class="post-spread">
       
+        
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script type="text/javascript">
+      const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'smartliby.github.io',
+        owner: '',
+        admin: ''.split(','),
+        pagerDirection: 'last',
+        // facebook-like distraction free mode
+        distractionFreeMode: false
+      })
+      gitalk.render('gitalk-container')
+    </script>
+  
+
+
+      
     </div>
   </div>
 
@@ -740,7 +760,6 @@ Horse
   <div class="comments" id="comments"> 
     
       <div id="gitalk-container"></div>
-      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
      
   </div> 
  
