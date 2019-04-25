@@ -645,6 +645,10 @@ BadFruitException: Bad fruit request!
           
 
   
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
 
 
 
@@ -970,6 +974,35 @@ BadFruitException: Bad fruit request!
 
   
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'a1583845229156fa594a',
+    clientSecret: '888d0f868648be77cc2520b7fdd37ed63875b4d3',
+    repo: 'smartliby.github.io',
+    owner: 'smartliby',
+    admin: ['smartliby'],
+    id: md5(location.pathname),
+    
+      language: 'zh-CN',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
 
   
 
