@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smartliby.github.io/categories/index.html</loc>
+    
+    <lastmod>2019-04-27T12:11:00.737Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smartliby.github.io/tags/index.html</loc>
+    
+    <lastmod>2019-04-27T12:10:44.053Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smartliby.github.io/404.html</loc>
     
     <lastmod>2019-04-27T12:08:18.470Z</lastmod>
@@ -12,20 +26,6 @@
     <loc>https://smartliby.github.io/about/index.html</loc>
     
     <lastmod>2019-04-27T12:04:01.480Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smartliby.github.io/tags/index.html</loc>
-    
-    <lastmod>2019-04-22T15:23:58.893Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smartliby.github.io/categories/index.html</loc>
-    
-    <lastmod>2019-04-22T15:23:58.877Z</lastmod>
     
   </url>
   
