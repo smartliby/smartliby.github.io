@@ -115,23 +115,23 @@
 
 
 
-  <meta name="description" content="合成模式简介合成模式属于对象的结构型模式，有时又被称为”部分-整体模式”。合成模式将对象组织到树结构中，可以用来描述整体与部分的关系。">
-<meta name="keywords" content="java,合成模式">
+  <meta name="description" content="Kubeflow是Google推出的基于kubernetes环境下的机器学习组件，通过Kubeflow可以实现对TFJob等资源类型定义，可以像部署应用一样完成在TFJob分布式训练模型的过程。最初的设计是将Kubernetes和Tensorflow结合实现对Tensorflow分布式训练的支持。但是仅仅实现对Tensorflow的支持还是远远不够的，Kubeflow社区又陆续对各种深度学习框架进">
+<meta name="keywords" content="k8s,kubeflow,microk8s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式09之 合成(Composite)模式(结构模式)">
-<meta property="og:url" content="https://smartliby.github.io/2014/05/22/设计模式09之-合成-Composite-模式-结构模式/index.html">
+<meta property="og:title" content="kubeflow1.0 安装教程">
+<meta property="og:url" content="https://smartliby.github.io/2020/04/04/kubeflow安装教程/index.html">
 <meta property="og:site_name" content="以梦为马">
-<meta property="og:description" content="合成模式简介合成模式属于对象的结构型模式，有时又被称为”部分-整体模式”。合成模式将对象组织到树结构中，可以用来描述整体与部分的关系。">
+<meta property="og:description" content="Kubeflow是Google推出的基于kubernetes环境下的机器学习组件，通过Kubeflow可以实现对TFJob等资源类型定义，可以像部署应用一样完成在TFJob分布式训练模型的过程。最初的设计是将Kubernetes和Tensorflow结合实现对Tensorflow分布式训练的支持。但是仅仅实现对Tensorflow的支持还是远远不够的，Kubeflow社区又陆续对各种深度学习框架进">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://smartliby.github.io/images/media/pattern09_01.jpg">
-<meta property="og:image" content="https://smartliby.github.io/images/media/pattern09_02.jpg">
-<meta property="og:image" content="https://smartliby.github.io/images/media/pattern09_03.jpg">
-<meta property="og:image" content="https://smartliby.github.io/images/media/pattern09_04.jpg">
-<meta property="og:updated_time" content="2019-04-22T15:23:58.633Z">
+<meta property="og:image" content="https://smartliby.github.io/images/media/选区_053.png">
+<meta property="og:image" content="https://smartliby.github.io/images/media/选区_054.png">
+<meta property="og:image" content="https://smartliby.github.io/images/media/选区_055.png">
+<meta property="og:image" content="https://smartliby.github.io/images/media/选区_056.png">
+<meta property="og:updated_time" content="2020-04-04T16:19:57.150Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式09之 合成(Composite)模式(结构模式)">
-<meta name="twitter:description" content="合成模式简介合成模式属于对象的结构型模式，有时又被称为”部分-整体模式”。合成模式将对象组织到树结构中，可以用来描述整体与部分的关系。">
-<meta name="twitter:image" content="https://smartliby.github.io/images/media/pattern09_01.jpg">
+<meta name="twitter:title" content="kubeflow1.0 安装教程">
+<meta name="twitter:description" content="Kubeflow是Google推出的基于kubernetes环境下的机器学习组件，通过Kubeflow可以实现对TFJob等资源类型定义，可以像部署应用一样完成在TFJob分布式训练模型的过程。最初的设计是将Kubernetes和Tensorflow结合实现对Tensorflow分布式训练的支持。但是仅仅实现对Tensorflow的支持还是远远不够的，Kubeflow社区又陆续对各种深度学习框架进">
+<meta name="twitter:image" content="https://smartliby.github.io/images/media/选区_053.png">
 
 
 
@@ -141,7 +141,7 @@
 
   
   
-  <link rel="canonical" href="https://smartliby.github.io/2014/05/22/设计模式09之-合成-Composite-模式-结构模式/">
+  <link rel="canonical" href="https://smartliby.github.io/2020/04/04/kubeflow安装教程/">
 
 
 
@@ -151,7 +151,7 @@
   };
 </script>
 
-  <title>设计模式09之 合成(Composite)模式(结构模式) | 以梦为马</title>
+  <title>kubeflow1.0 安装教程 | 以梦为马</title>
   
 
 
@@ -406,7 +406,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://smartliby.github.io/2014/05/22/设计模式09之-合成-Composite-模式-结构模式/">
+    <link itemprop="mainEntityOfPage" href="https://smartliby.github.io/2020/04/04/kubeflow安装教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="James Lee">
@@ -423,7 +423,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">设计模式09之 合成(Composite)模式(结构模式)
+          <h2 class="post-title" itemprop="name headline">kubeflow1.0 安装教程
 
               
             
@@ -449,7 +449,7 @@
                 
               
 
-              <time title="创建时间：2014-05-22 11:06:02" itemprop="dateCreated datePublished" datetime="2014-05-22T11:06:02+08:00">2014-05-22</time>
+              <time title="创建时间：2020-04-04 18:21:11" itemprop="dateCreated datePublished" datetime="2020-04-04T18:21:11+08:00">2020-04-04</time>
             
 
             
@@ -466,7 +466,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-22 23:23:58" itemprop="dateModified" datetime="2019-04-22T23:23:58+08:00">2019-04-22</time>
+                <time title="修改时间：2020-04-05 00:19:57" itemprop="dateModified" datetime="2020-04-05T00:19:57+08:00">2020-04-05</time>
               
             
           </span>
@@ -483,7 +483,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/kubeflow/" itemprop="url" rel="index"><span itemprop="name">kubeflow</span></a></span>
 
                 
                 
@@ -519,7 +519,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">7.9k</span>
+                <span title="本文字数">10k</span>
               
 
               
@@ -533,7 +533,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">9 分钟</span>
               
             </div>
           
@@ -553,379 +553,47 @@
       
 
       
-        <h1 id="合成模式简介"><a href="#合成模式简介" class="headerlink" title="合成模式简介"></a>合成模式简介</h1><p>合成模式属于对象的结构型模式，有时又被称为”部分-整体模式”。合成模式将对象组织到树结构中，可以用来描述整体与部分的关系。</p>
+        <p><a href="https://www.kubeflow.org/docs" target="_blank" rel="noopener">Kubeflow</a>是Google推出的基于kubernetes环境下的机器学习组件，通过Kubeflow可以实现对TFJob等资源类型定义，可以像部署应用一样完成在TFJob分布式训练模型的过程。最初的设计是将Kubernetes和Tensorflow结合实现对Tensorflow分布式训练的支持。但是仅仅实现对Tensorflow的支持还是远远不够的，<code>Kubeflow</code>社区又陆续对各种深度学习框架进行支持,例如:<code>MXNet</code>, <code>Caffee</code>, <code>PyTorch</code>等。使得机器学习算法同学只需关心算法实现，而后续的模型训练和服务上线都交给平台来做,解放算法同学使其专做自己擅长的事儿。</p>
 <a id="more"></a>
-<p>例如，文件系统就是一个典型的合成模式系统。合成模式的树形图如下所示：<br><img src="/images/media/pattern09_01.jpg" alt="pattern09_01"></p>
-<p>它的UML类图如下所示：<br><img src="/images/media/pattern09_02.jpg" alt="pattern09_02"></p>
-<p>它共包括3个角色：<strong>抽象构件(Component)</strong>，<strong>树叶构件(Leaf)</strong> 和 <strong>树枝构件(Composite)</strong>。</p>
-<table>
-<thead>
-<tr>
-<th>角色</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>抽象构件</td>
-<td>这是一个抽象角色，它给参加组合的对象规定一个接口。这个角色给出共有的接口及其默认行为。</td>
-</tr>
-<tr>
-<td>树叶构件</td>
-<td>代表参加组合的树叶对象。树叶对象没有下级子对象，它定义出参加组合的原始对象的行为。</td>
-</tr>
-<tr>
-<td>树枝构件</td>
-<td>代表参加组合的有下级子对象的对象，并给出树枝构件对象的行为。</td>
-</tr>
-</tbody>
-</table>
-<p>根据”参加组合的对象的管理方式”，可以将合成模式分为两种不同的形式：<strong>安全合成模式</strong> 和 <strong>透明合成模式</strong>。<br>• 安全合成模式：此方式只允许”树枝构件”有对象的管理方法。<br>• 透明合成模式：此方式只允许”树枝构件’和”树叶构件”都有对象的管理方法，但”树叶构件”中的管理方法无实际意义。  </p>
-<h1 id="安全合成模式"><a href="#安全合成模式" class="headerlink" title="安全合成模式"></a>安全合成模式</h1><p>安全合成模式要求管理聚集的方法只出现在树枝构件类中，而不出现在树叶构件类中。</p>
-<p>安全合成模式的UML图如下：<br><img src="/images/media/pattern09_03.jpg" alt="pattern09_03"></p>
-<p>它共包括3个角色：<strong>抽象构件(Component)，树叶构件(Leaf) 和 树枝构件(Composite)</strong>。</p>
-<table>
-<thead>
-<tr>
-<th>角色</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>抽象构件</td>
-<td>这是一个抽象角色，它给参加组合的对象定义出公共的接口及其默认行为，可以用来管理所有的子对象。合成对象通常把它所包含的子对象当做类型为Component的对象。在安全式的合成模式里，构件角色并不定义出管理子对象的方法，这一定义由树枝构件对象给出。</td>
-</tr>
-<tr>
-<td>树叶构件</td>
-<td>树叶对象是没有下级子对象的对象，定义出参加组合的原始对象的行为。</td>
-</tr>
-<tr>
-<td>树枝构件</td>
-<td>代表参加组合的有下级子对象的对象。树枝构件类给出所有的管理子对象的方法，如add()、remove()以及getChild()。</td>
-</tr>
-</tbody>
-</table>
-<p>示例代码</p>
-<pre><code>public interface Component {
-    // 返还自己的示例
-    Composite getComposite();
-    // 某个商业方法
-    void sampleOperation();
-}
+<p>目前Kubeflow仅支持在v1.15.11及以下版本的k8s上部署，v1.16及以上存在兼容性问题，具体情况可参考<a href="https://www.kubeflow.org/docs/started/k8s/overview/" target="_blank" rel="noopener">这篇文章</a>，接下来我们基于<a href="https://microk8s.io/" target="_blank" rel="noopener">Microk8s</a>（版本1.15/stable）部署kubeflow v1.0</p>
+<h4 id="安装-knative-v0-7-1"><a href="#安装-knative-v0-7-1" class="headerlink" title="安装 knative v0.7.1"></a>安装 knative v0.7.1</h4><p>kubeflow安装时依赖knative和istio组件，所以需要先安装knative，istio(microk8s安装时已安装<code>microk8s.enable istio</code>，不需要再安装)，knative 的镜像是用 sha256 方式来 pull的。在本地我们不能通过 docker tag 的方式重新打包，只能修改 yaml 里的所有配置</p>
+<p>默认knative的安装配置文件在<code>/snap/microk8s/current/actions/knative/</code>目录下，没有操作权限无法修改，需要先拷贝出来或者去github下载到本地，并将里面的镜像下载域名由gcr.io改成gcr.azk8s.cn</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装 Knative CRD</span></span><br><span class="line">kubectl apply --selector knative.dev/crd-install=true -f serving.yaml</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 再运行一遍 kubectl apply</span></span><br><span class="line">kubectl apply  -f serving.yaml</span><br></pre></td></tr></table></figure>
+<h4 id="验证-knative-安装"><a href="#验证-knative-安装" class="headerlink" title="验证 knative 安装"></a>验证 knative 安装</h4><p>运行<code>kubectl get pods --namespace knative-serving</code>验证 Knative 所有 pod 是否可以正常启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">NAME                                      READY   STATUS    RESTARTS   AGE</span><br><span class="line">activator-55f6c8d9b-2hs77                 2/2     Running   24         2d13h</span><br><span class="line">autoscaler-78d575f875-l7zfj               2/2     Running   18         2d13h</span><br><span class="line">controller-776478fb94-hmmxc               1/1     Running   3          2d13h</span><br><span class="line">networking-certmanager-779cd6f448-xtvrb   1/1     Running   3          2d13h</span><br><span class="line">networking-istio-674bd78b75-688gc         1/1     Running   3          2d13h</span><br><span class="line">webhook-59b575dc79-cs7f4                  1/1     Running   0          13h</span><br></pre></td></tr></table></figure>
+<h4 id="安装kubeflow"><a href="#安装kubeflow" class="headerlink" title="安装kubeflow"></a>安装kubeflow</h4><p>下载 kfctl binary from the <a href="https://github.com/kubeflow/kfctl/releases/" target="_blank" rel="noopener">Kubeflow releases page</a></p>
+<p>解压安装包并添加到执行目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf kfctl_v1.0.1-0-gf3edb9b_linux.tar.gz</span><br><span class="line">sudo cp kfctl /usr/bin</span><br></pre></td></tr></table></figure>
+<p>设置环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export BASE_DIR=/data/</span><br><span class="line">export KF_NAME=my-kubeflow</span><br><span class="line">export KF_DIR=$&#123;BASE_DIR&#125;/$&#123;KF_NAME&#125;</span><br><span class="line">export CONFIG_URI=&quot;https://raw.githubusercontent.com/kubeflow/manifests/v1.0-branch/kfdef/kfctl_k8s_istio.v1.0.1.yaml&quot;</span><br></pre></td></tr></table></figure>
+<p>部署kubeflow</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p $&#123;KF_DIR&#125;</span><br><span class="line">cd $&#123;KF_DIR&#125;</span><br><span class="line">kfctl apply -V -f $&#123;CONFIG_URI&#125;</span><br><span class="line">kubectl -n kubeflow get all</span><br></pre></td></tr></table></figure>
+<p>输出如下日志即安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO[0259] Applied the configuration Successfully!       filename=&quot;cmd/apply.go:72&quot;</span><br></pre></td></tr></table></figure>
+<p>查看当前 Kubernetes pods 状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pods --namespace kubeflow</span><br></pre></td></tr></table></figure>
+<p>发现kubeflow的pod大部分没有启动成功，原因还是网络问题，需要访问gcr.io下载镜像</p>
+<p>执行以下脚本将镜像下载到本地并导入到microk8s</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/env bash</span></span><br><span class="line"></span><br><span class="line">echo ""</span><br><span class="line">echo "=========================================================="</span><br><span class="line">echo "pull kubeflow  v1.0 images from gcr.azk8s.cn ..."</span><br><span class="line">echo "=========================================================="</span><br><span class="line">echo ""</span><br><span class="line"></span><br><span class="line">ORIGINAL_REGISTRY=gcr.io</span><br><span class="line">MY_REGISTRY=gcr.azk8s.cn</span><br><span class="line"></span><br><span class="line">gcr_imgs=(</span><br><span class="line">    "kfserving/kfserving-controller:0.2.2"</span><br><span class="line">    "ml-pipeline/api-server:0.2.0"</span><br><span class="line">    "kubeflow-images-public/kfam:v1.0.0-gf3e09203"</span><br><span class="line">    "kubeflow-images-public/ingress-setup:latest"</span><br><span class="line">    "kubeflow-images-public/kubernetes-sigs/application:1.0-beta"</span><br><span class="line">    "kubeflow-images-public/centraldashboard:v1.0.0-g3ec0de71"</span><br><span class="line">    "kubeflow-images-public/jupyter-web-app:v1.0.0-g2bd63238"</span><br><span class="line">    "kubeflow-images-public/katib/v1alpha3/katib-controller:v0.8.0"</span><br><span class="line">    "kubeflow-images-public/katib/v1alpha3/katib-db-manager:v0.8.0"</span><br><span class="line">    "kubeflow-images-public/katib/v1alpha3/katib-ui:v0.8.0"</span><br><span class="line">    "kubebuilder/kube-rbac-proxy:v0.4.0"</span><br><span class="line">    "metacontroller/metacontroller:v0.3.0"</span><br><span class="line">    "kubeflow-images-public/metadata:v0.1.11"</span><br><span class="line">    "ml-pipeline/envoy:metadata-grpc"</span><br><span class="line">    "tfx-oss-public/ml_metadata_store_server:v0.21.1"</span><br><span class="line">    "kubeflow-images-public/metadata-frontend:v0.1.8"</span><br><span class="line">    "ml-pipeline/visualization-server:0.2.0"</span><br><span class="line">    "ml-pipeline/persistenceagent:0.2.0"</span><br><span class="line">    "ml-pipeline/scheduledworkflow:0.2.0"</span><br><span class="line">    "ml-pipeline/frontend:0.2.0"</span><br><span class="line">    "ml-pipeline/viewer-crd-controller:0.2.0"</span><br><span class="line">    "kubeflow-images-public/notebook-controller:v1.0.0-gcd65ce25"</span><br><span class="line">    "kubeflow-images-public/profile-controller:v1.0.0-ge50a8531"</span><br><span class="line">    "kubeflow-images-public/pytorch-operator:v1.0.0-g047cf0f"</span><br><span class="line">    "spark-operator/spark-operator:v1beta2-1.0.0-2.4.4"</span><br><span class="line">    "spark-operator/spark-operator:v1beta2-1.0.0-2.4.4"</span><br><span class="line">    "google_containers/spartakus-amd64:v1.1.0"</span><br><span class="line">    "kubeflow-images-public/tf_operator:v1.0.0-g92389064"</span><br><span class="line">    "kubeflow-images-public/admission-webhook:v1.0.0-gaf96e4e3"</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">for img in $&#123;gcr_imgs[@]&#125;</span><br><span class="line">do</span><br><span class="line">    # 拉取镜像</span><br><span class="line">    docker pull $&#123;MY_REGISTRY&#125;/$&#123;img&#125;</span><br><span class="line">    # 添加Tag</span><br><span class="line">    docker tag $&#123;MY_REGISTRY&#125;/$&#123;img&#125; $&#123;ORIGINAL_REGISTRY&#125;/$&#123;img&#125;</span><br><span class="line">    # 输出</span><br><span class="line">    docker save $&#123;ORIGINAL_REGISTRY&#125;/$&#123;img&#125; &gt; $&#123;img##*/&#125;.tar</span><br><span class="line">    # 输入</span><br><span class="line">    microk8s.ctr -n k8s.io image import $&#123;img##*/&#125;.tar</span><br><span class="line">    # 删除Tag</span><br><span class="line">    docker rmi $&#123;MY_REGISTRY&#125;/$&#123;img&#125; $&#123;ORIGINAL_REGISTRY&#125;/$&#123;img&#125;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">echo ""</span><br><span class="line">echo "=========================================================="</span><br><span class="line">echo "pull kubeflow  v1.0 images from gcr.azk8s.cn finished."</span><br><span class="line">echo "=========================================================="</span><br><span class="line">echo ""</span><br></pre></td></tr></table></figure>
+<p>如果还是有pod无法启动，可通过<code>kubectl describe pod 未启动pod的名称 -n kubeflow</code>查看原因</p>
+<p>如果是因为镜像无法下载，可以将依赖的镜像加到上面的脚本里下载镜像</p>
+<p>如果是因为镜像拉取策略导致每次都重新下载问题，可通过下面命令或者kubernetes-dashboard修改，将<code>Always</code> 改为 <code>IfNotPresent</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl edit pod 未启动pod的名称 -n kubeflow</span><br></pre></td></tr></table></figure>
+<p>执行 <code>kubectl get pods --namespace kubeflow</code>查看kubeflow的pod都已运行起来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">NAME                                                           READY   STATUS      RESTARTS   AGE</span><br><span class="line">admission-webhook-bootstrap-stateful-set-0                     1/1     Running     6          2d4h</span><br><span class="line">admission-webhook-deployment-569558c8b6-n8b7k                  1/1     Running     0          13h</span><br><span class="line">application-controller-stateful-set-0                          1/1     Running     3          2d4h</span><br><span class="line">argo-ui-7ffb9b6577-w8pb7                                       1/1     Running     7          3d7h</span><br><span class="line">centraldashboard-659bd78c-fxgqd                                1/1     Running     3          3d7h</span><br><span class="line">jupyter-web-app-deployment-878f9c988-xgh82                     1/1     Running     3          2d5h</span><br><span class="line">katib-controller-7f58569f7d-8bw7z                              1/1     Running     4          3d7h</span><br><span class="line">katib-db-manager-54b66f9f9d-ngqw9                              1/1     Running     3          3d7h</span><br><span class="line">katib-mysql-dcf7dcbd5-7wbck                                    1/1     Running     12         4d1h</span><br><span class="line">katib-ui-6f97756598-4mtjs                                      1/1     Running     3          3d7h</span><br><span class="line">kfserving-controller-manager-0                                 2/2     Running     7          2d5h</span><br><span class="line">metacontroller-0                                               1/1     Running     5          3d7h</span><br><span class="line">metadata-db-65fb5b695d-wq8vh                                   1/1     Running     12         4d1h</span><br><span class="line">metadata-deployment-65ccddfd4c-vwfd2                           1/1     Running     3          3d7h</span><br><span class="line">metadata-envoy-deployment-7754f56bff-svtz2                     1/1     Running     3          3d7h</span><br><span class="line">metadata-grpc-deployment-75f9888cbf-zj4sn                      1/1     Running     5          3d7h</span><br><span class="line">metadata-ui-7c85545947-v68l7                                   1/1     Running     3          3d7h</span><br><span class="line">minio-69b4676bb7-w96xk                                         1/1     Running     12         4d1h</span><br><span class="line">ml-pipeline-5cddb75848-bsc48                                   1/1     Running     3          2d6h</span><br><span class="line">ml-pipeline-ml-pipeline-visualizationserver-7f6fcb68c8-vxjj7   1/1     Running     3          2d7h</span><br><span class="line">ml-pipeline-persistenceagent-6ff9fb86dc-dvxx4                  1/1     Running     5          2d6h</span><br><span class="line">ml-pipeline-scheduledworkflow-7f84b54646-ndxcb                 1/1     Running     3          2d7h</span><br><span class="line">ml-pipeline-ui-6758f58868-gqvlp                                1/1     Running     3          2d6h</span><br><span class="line">ml-pipeline-viewer-controller-deployment-685874bc58-jljw8      1/1     Running     3          2d5h</span><br><span class="line">mysql-6bcbfbb6b8-xmphz                                         1/1     Running     12         4d1h</span><br><span class="line">notebook-controller-deployment-7db7c8589d-mlgb4                1/1     Running     3          2d5h</span><br><span class="line">profiles-deployment-56b7c6788f-kk8kh                           2/2     Running     6          2d7h</span><br><span class="line">pytorch-operator-cf8c5c497-nmfnv                               1/1     Running     7          3d7h</span><br><span class="line">seldon-controller-manager-6b4b969447-qp7l4                     1/1     Running     20         4d1h</span><br><span class="line">spark-operatorcrd-cleanup-rrpxd                                0/2     Completed   0          3d7h</span><br><span class="line">spark-operatorsparkoperator-76dd5f5688-kn28n                   1/1     Running     3          3d7h</span><br><span class="line">spartakus-volunteer-5dc96f4447-xjclm                           1/1     Running     3          3d7h</span><br><span class="line">tensorboard-5f685f9d79-9x549                                   1/1     Running     12         4d1h</span><br><span class="line">tf-job-operator-5fb85c5fb7-lqvrg                               1/1     Running     6          3d7h</span><br><span class="line">workflow-controller-689d6c8846-znvt9                           1/1     Running     12         4d1h</span><br></pre></td></tr></table></figure>
+<p>执行如下命令进行端口映射访问Kubeflow UI</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup kubectl port-forward -n istio-system svc/istio-ingressgateway 8088:80 &amp;</span><br></pre></td></tr></table></figure>
+<p>访问<a href="http://127.0.0.1:8088/" target="_blank" rel="noopener">http://127.0.0.1:8088/</a></p>
+<p><img src="/images/media/选区_053.png" alt></p>
+<h4 id="创建Jupyter-notebook-server"><a href="#创建Jupyter-notebook-server" class="headerlink" title="创建Jupyter notebook server"></a>创建Jupyter notebook server</h4><p><img src="/images/media/选区_054.png" alt></p>
+<p><img src="/images/media/选区_055.png" alt></p>
+<p><img src="/images/media/选区_056.png" alt></p>
+<p>点击连接之后就可以跑模型训练了</p>
+<h4 id="测试Jupyter"><a href="#测试Jupyter" class="headerlink" title="测试Jupyter"></a>测试Jupyter</h4><p>创建Python 3 notebook，执行如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">from tensorflow.examples.tutorials.mnist import input_data</span><br><span class="line">mnist = input_data.read_data_sets(&quot;MNIST_data/&quot;, one_hot=True)</span><br><span class="line"></span><br><span class="line">import tensorflow as tf</span><br><span class="line"></span><br><span class="line">x = tf.placeholder(tf.float32, [None, 784])</span><br><span class="line"></span><br><span class="line">W = tf.Variable(tf.zeros([784, 10]))</span><br><span class="line">b = tf.Variable(tf.zeros([10]))</span><br><span class="line"></span><br><span class="line">y = tf.nn.softmax(tf.matmul(x, W) + b)</span><br><span class="line"></span><br><span class="line">y_ = tf.placeholder(tf.float32, [None, 10])</span><br><span class="line">cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))</span><br><span class="line"></span><br><span class="line">train_step = tf.train.GradientDescentOptimizer(0.05).minimize(cross_entropy)</span><br><span class="line"></span><br><span class="line">sess = tf.InteractiveSession()</span><br><span class="line">tf.global_variables_initializer().run()</span><br><span class="line"></span><br><span class="line">for _ in range(1000):</span><br><span class="line">  batch_xs, batch_ys = mnist.train.next_batch(100)</span><br><span class="line">  sess.run(train_step, feed_dict=&#123;x: batch_xs, y_: batch_ys&#125;)</span><br><span class="line"></span><br><span class="line">correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))</span><br><span class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))</span><br><span class="line">print(&quot;Accuracy: &quot;, sess.run(accuracy, feed_dict=&#123;x: mnist.test.images, y_: mnist.test.labels&#125;))</span><br></pre></td></tr></table></figure>
+<p>运行结果如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Accuracy:  0.9012</span><br></pre></td></tr></table></figure>
 
-public class Composite implements Component {
-    private Vector componentVector = new Vector();
-    public Composite getComposite() {
-        return this;
-    }
-    public void sampleOperation() {
-        Enumeration enum = composites();
-        while (enum.hasMoreElements()) {
-            ((Composite)enum.nextElement()).sampleOperation();
-        }
-    }
-    // 添加一个子构件对象
-    public void add(Component component) {
-        componentVector.addElement(component);
-    }
-    // 删除一个子构件对象
-    public void remove(Component component) {
-        componentVector.removeElement(component);
-    }
-    // 聚集管理办法，返还聚集的Enumeration对象
-    public Enumeration components() {
-        return componentVector.elements();
-    }
-}
-
-public class Leaf implements Component {
-    public void sampleOperation() {
-    }
-    public Composite getComposite() {
-        return null;
-    }
-}
-</code></pre><p>从中可以看出，树叶构建(Leaf)中没有对节点的管理方法，而只有树枝构建(Composite)中有节点的管理方法。</p>
-<h1 id="透明合成模式"><a href="#透明合成模式" class="headerlink" title="透明合成模式"></a>透明合成模式</h1><p>与安全式的合成模式不同的是，透明式的合成模式要求所有的具体构件类，不论树枝构件还是树叶构件，均符合一个固定接口。</p>
-<p>透明合成模式的UML图如下：<br><img src="/images/media/pattern09_04.jpg" alt="pattern09_04"></p>
-<p>它共包括3个角色：<strong>抽象构件(Component)，树叶构件(Leaf) 和 树枝构件(Composite)</strong>。</p>
-<table>
-<thead>
-<tr>
-<th>角色</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>抽象构件</td>
-<td>这是一个抽象角色，它给参加组合的对象规定一个接口，规范共有的接口及默认行为。这个接口可以用来管理所有的子对象，要提供一个接口以规范取得和管理下层组件的接口，包括add(), remove()以及getChild()之类的方法。</td>
-</tr>
-<tr>
-<td>树叶构件</td>
-<td>代表参加组合的树叶对象，定义出参加组合的原始对象的行为。树叶类会给出add(), remove()以及getChild()之类的用来管理子类对象的方法的平庸实现。</td>
-</tr>
-<tr>
-<td>树枝构件</td>
-<td>代表参加组合的有子对象的对象，定义出这样的对象的行为。</td>
-</tr>
-</tbody>
-</table>
-<p>示例代码</p>
-<pre><code>public interface Component {
-    // 某个商业方法
-    void sampleOperation();
-    // 返还自己的示例
-    Composite getComposite();
-    // 聚集管理方法，增加子构件对象
-    void add(Component component);
-    // 聚集管理方法，删除子构件对象
-    void remove(Component component);
-    // 聚集管理办法，返还聚集的Enumeration对象
-    Enumeration components();
-}
-
-public class Composite implements Component {
-    private Vector componentVector = new Vector();
-    public Composite getComposite() {
-        return this;
-    }
-    public void sampleOperation() {
-        Enumeration enum = composites();
-        while (enum.hasMoreElements()) {
-            ((Composite)enum.nextElement()).sampleOperation();
-        }
-    }
-    // 添加一个子构件对象
-    public void add(Component component) {
-        componentVector.addElement(component);
-    }
-    // 删除一个子构件对象
-    public void remove(Component component) {
-        componentVector.removeElement(component);
-    }
-    // 聚集管理办法，返还聚集的Enumeration对象
-    public Enumeration components() {
-        return componentVector.elements();
-    }
-}
-
-public class Leaf implements Component {
-    public void sampleOperation() {
-    }
-    public Composite getComposite() {
-        return null;
-    }
-    // 添加一个子构件对象
-    public void add(Component component) {
-    }
-    // 删除一个子构件对象
-    public void remove(Component component) {
-    }
-    // 聚集管理办法，返还聚集的Enumeration对象
-    public Enumeration components() {
-        return null;
-    }
-
-}　
-</code></pre><p><a name="anchor4"></a></p>
-<h1 id="合成模式示例"><a href="#合成模式示例" class="headerlink" title="合成模式示例"></a>合成模式示例</h1><p>下面以一个逻辑树为例子，演示合成模式。</p>
-<h2 id="抽象构件-IFile-java"><a href="#抽象构件-IFile-java" class="headerlink" title="抽象构件(IFile.java)"></a>抽象构件(IFile.java)</h2><pre><code>public interface IFile {
-    //返回自己的实例
-    IFile getComposite();
-
-    //某个商业方法
-    void sampleOperation();
-
-    //获取深度
-    int getDeep();
-
-    //设置深度
-    void setDeep(int x);
-}
-</code></pre><h2 id="树枝构件-Folder-java"><a href="#树枝构件-Folder-java" class="headerlink" title="树枝构件(Folder.java)"></a>树枝构件(Folder.java)</h2><pre><code>import java.util.Vector;
-
-public class Folder implements IFile {
-    private String name;    //文件名字
-    private int deep;       //层级深度，根深度为0
-    private Vector&lt;IFile&gt; componentVector = new Vector&lt;IFile&gt;();
-
-    public Folder(String name) {
-        this.name = name;
-    }
-
-    //返回自己的实例
-    public IFile getComposite() {
-        return this;
-    }
-
-    //某个商业方法
-    public void sampleOperation() {
-        System.out.println(&quot;执行了某个商业方法！&quot;);
-    }
-
-    //增加一个文件或文件夹
-    public void add(IFile IFile) {
-        componentVector.addElement(IFile);
-        IFile.setDeep(this.deep + 1);
-    }
-
-    //删除一个文件或文件夹
-    public void remove(IFile IFile) {
-        componentVector.removeElement(IFile);
-    }
-
-    //返回直接子文件（夹）集合
-    public Vector getAllComponent() {
-        return componentVector;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getDeep() {
-        return deep;
-    }
-
-    public void setDeep(int deep) {
-        this.deep = deep;
-    }
-}
-</code></pre><h2 id="树枝构件-File-java"><a href="#树枝构件-File-java" class="headerlink" title="树枝构件(File.java)"></a>树枝构件(File.java)</h2><pre><code>public class File implements IFile {
-    private String name;    //文件名字
-    private int deep;       //层级深度
-
-    public File(String name) {
-        this.name = name;
-    }
-
-    //返回自己的实例
-    public IFile getComposite() {
-        return this;
-    }
-
-    //某个商业方法
-    public void sampleOperation() {
-        System.out.println(&quot;执行了某个商业方法！&quot;);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getDeep() {
-        return deep;
-    }
-
-    public void setDeep(int deep) {
-        this.deep = deep;
-    }
-}
-</code></pre><h2 id="客户端测试程序-Client-java"><a href="#客户端测试程序-Client-java" class="headerlink" title="客户端测试程序(Client.java)"></a>客户端测试程序(Client.java)</h2><pre><code>import java.util.Iterator;
-import java.util.Vector;
-import java.util.Collections;
-
-public class Client {
-    private static final String INDENT_CHAR = &quot;\t&quot;;       //文件层次缩进字符
-
-    public static void main(String args[]) {
-        new Client().test();
-    }
-
-    /**
-     * 客户端测试方法
-     */
-    public void test() {
-        //根下文件及文件夹
-        Folder root = new Folder(&quot;树根&quot;);
-
-        Folder b1_1 = new Folder(&quot;1_枝1&quot;);
-        Folder b1_2 = new Folder(&quot;1_枝2&quot;);
-        Folder b1_3 = new Folder(&quot;1_枝3&quot;);
-        File l1_1 = new File(&quot;1_叶1&quot;);
-        File l1_2 = new File(&quot;1_叶2&quot;);
-        File l1_3 = new File(&quot;1_叶3&quot;);
-
-        //b1_2下的文件及文件夹
-        Folder b2_1 = new Folder(&quot;2_枝1&quot;);
-        Folder b2_2 = new Folder(&quot;2_枝2&quot;);
-        File l2_1 = new File(&quot;2_叶1&quot;);
-
-        //缔造树的层次关系（简单测试，没有重复添加的控制）
-        root.add(b1_1);
-        root.add(b1_2);
-        root.add(l1_1);
-        root.add(l1_2);
-
-        b1_2.add(b2_1);
-        b1_2.add(b2_2);
-        b1_2.add(l2_1);
-        root.add(l1_3);
-        root.add(b1_3);
-        //控制台打印树的层次
-        outTree(root);
-    }
-
-    public void outTree(Folder folder) {
-        System.out.println(folder.getName());
-        iterateTree(folder);
-    }
-
-    /**
-     * 遍历文件夹，输入文件树
-     *
-     * @param folder
-     */
-    public void iterateTree(Folder folder) {
-        Vector&lt;IFile&gt; clist = folder.getAllComponent();
-        for (Iterator&lt;IFile&gt; it = clist.iterator(); it.hasNext();) {
-            IFile em = it.next();
-            if (em instanceof Folder) {
-                Folder cm = (Folder) em;
-                System.out.println(getIndents(em.getDeep()) + cm.getName());
-                iterateTree(cm);
-            } else {
-                System.out.println(getIndents(em.getDeep()) + ((File) em).getName());
-            }
-        }
-    }
-
-    /**
-     * 文件层次缩进字符串
-     *
-     * @param x 缩进字符个数
-     * @return 缩进字符串
-     */
-    public static String getIndents(int x) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i &lt; x; i++) {
-            sb.append(INDENT_CHAR);
-        }
-        return sb.toString();
-    }
-}
-</code></pre><p>运行结果：</p>
-<pre><code>树根
-    1_枝1
-    1_枝2
-        2_枝1
-        2_枝2
-        2_叶1
-    1_叶1
-    1_叶2
-    1_叶3
-    1_枝3
-</code></pre>
       
     </div>
 
@@ -992,7 +660,7 @@ public class Client {
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://smartliby.github.io/2014/05/22/设计模式09之-合成-Composite-模式-结构模式/" title="设计模式09之 合成(Composite)模式(结构模式)">https://smartliby.github.io/2014/05/22/设计模式09之-合成-Composite-模式-结构模式/</a>
+    <a href="https://smartliby.github.io/2020/04/04/kubeflow安装教程/" title="kubeflow1.0 安装教程">https://smartliby.github.io/2020/04/04/kubeflow安装教程/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -1005,9 +673,11 @@ public class Client {
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tags"></i> java</a>
+            <a href="/tags/k8s/" rel="tag"><i class="fa fa-tags"></i> k8s</a>
           
-            <a href="/tags/合成模式/" rel="tag"><i class="fa fa-tags"></i> 合成模式</a>
+            <a href="/tags/kubeflow/" rel="tag"><i class="fa fa-tags"></i> kubeflow</a>
+          
+            <a href="/tags/microk8s/" rel="tag"><i class="fa fa-tags"></i> microk8s</a>
           
         </div>
       
@@ -1020,8 +690,8 @@ public class Client {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/05/21/设计模式08之-适配器-Adapter-模式-结构模式/" rel="next" title="设计模式08之 适配器(Adapter)模式(结构模式)">
-                <i class="fa fa-chevron-left"></i> 设计模式08之 适配器(Adapter)模式(结构模式)
+              <a href="/2019/05/12/Mac、Ubuntu系统的下载神器aria2/" rel="next" title="Mac、Ubuntu系统的下载神器aria2">
+                <i class="fa fa-chevron-left"></i> Mac、Ubuntu系统的下载神器aria2
               </a>
             
           </div>
@@ -1030,8 +700,8 @@ public class Client {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/05/23/设计模式10之-装饰-Decorator-模式-结构模式/" rel="prev" title="设计模式10之 装饰(Decorator)模式(结构模式)">
-                设计模式10之 装饰(Decorator)模式(结构模式) <i class="fa fa-chevron-right"></i>
+              <a href="/2020/04/04/microk8s安装教程/" rel="prev" title="ubuntu 18.04安装microk8s教程">
+                ubuntu 18.04安装microk8s教程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1288,7 +958,7 @@ public class Client {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#合成模式简介"><span class="nav-number">1.</span> <span class="nav-text">合成模式简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安全合成模式"><span class="nav-number">2.</span> <span class="nav-text">安全合成模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#透明合成模式"><span class="nav-number">3.</span> <span class="nav-text">透明合成模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#合成模式示例"><span class="nav-number">4.</span> <span class="nav-text">合成模式示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象构件-IFile-java"><span class="nav-number">4.1.</span> <span class="nav-text">抽象构件(IFile.java)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树枝构件-Folder-java"><span class="nav-number">4.2.</span> <span class="nav-text">树枝构件(Folder.java)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树枝构件-File-java"><span class="nav-number">4.3.</span> <span class="nav-text">树枝构件(File.java)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端测试程序-Client-java"><span class="nav-number">4.4.</span> <span class="nav-text">客户端测试程序(Client.java)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-knative-v0-7-1"><span class="nav-number">1.</span> <span class="nav-text">安装 knative v0.7.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证-knative-安装"><span class="nav-number">2.</span> <span class="nav-text">验证 knative 安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装kubeflow"><span class="nav-number">3.</span> <span class="nav-text">安装kubeflow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建Jupyter-notebook-server"><span class="nav-number">4.</span> <span class="nav-text">创建Jupyter notebook server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试Jupyter"><span class="nav-number">5.</span> <span class="nav-text">测试Jupyter</span></a></li></ol></div>
             
 
           </div>
