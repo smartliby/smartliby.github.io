@@ -22,8 +22,8 @@
       </categories>
       <tags>
         <tag>k8s</tag>
-        <tag>microk8s</tag>
         <tag>kubeflow</tag>
+        <tag>microk8s</tag>
       </tags>
   </entry>
   <entry>
@@ -46,8 +46,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>系统设置</tag>
         <tag>aria2</tag>
+        <tag>系统设置</tag>
       </tags>
   </entry>
   <entry>
@@ -58,8 +58,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>系统设置</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>

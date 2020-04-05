@@ -12,3 +12,6 @@ Disallow: /fancybox/
 
 Sitemap: http://smartliby.github.io/sitemap.xml
 Sitemap: http://smartliby.github.io/baidusitemap.xml
+
+Sitemap: https://blog.flyfox.top/sitemap.xml
+Sitemap: https://blog.flyfox.top/baidusitemap.xml

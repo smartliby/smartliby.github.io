@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://smartliby.github.io/"/>
+  <link href="https://blog.flyfox.top/"/>
   <updated>2020-04-05T08:46:15.685Z</updated>
-  <id>https://smartliby.github.io/</id>
+  <id>https://blog.flyfox.top/</id>
   
   <author>
     <name>James Lee</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>通过阿里云容器镜像服务下载gcr.io镜像</title>
-    <link href="https://smartliby.github.io/2020/04/05/%E9%80%9A%E8%BF%87%E9%98%BF%E9%87%8C%E4%BA%91%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E6%9C%8D%E5%8A%A1%E4%B8%8B%E8%BD%BDgcr-io%E9%95%9C%E5%83%8F/"/>
-    <id>https://smartliby.github.io/2020/04/05/通过阿里云容器镜像服务下载gcr-io镜像/</id>
+    <link href="https://blog.flyfox.top/2020/04/05/%E9%80%9A%E8%BF%87%E9%98%BF%E9%87%8C%E4%BA%91%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E6%9C%8D%E5%8A%A1%E4%B8%8B%E8%BD%BDgcr-io%E9%95%9C%E5%83%8F/"/>
+    <id>https://blog.flyfox.top/2020/04/05/通过阿里云容器镜像服务下载gcr-io镜像/</id>
     <published>2020-04-05T07:49:25.000Z</published>
     <updated>2020-04-05T08:46:15.685Z</updated>
     
@@ -31,21 +31,21 @@
     
     </summary>
     
-      <category term="k8s" scheme="https://smartliby.github.io/categories/k8s/"/>
+      <category term="k8s" scheme="https://blog.flyfox.top/categories/k8s/"/>
     
     
-      <category term="k8s" scheme="https://smartliby.github.io/tags/k8s/"/>
+      <category term="k8s" scheme="https://blog.flyfox.top/tags/k8s/"/>
     
-      <category term="github" scheme="https://smartliby.github.io/tags/github/"/>
+      <category term="github" scheme="https://blog.flyfox.top/tags/github/"/>
     
-      <category term="docker" scheme="https://smartliby.github.io/tags/docker/"/>
+      <category term="docker" scheme="https://blog.flyfox.top/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>kubeflow1.0 安装教程</title>
-    <link href="https://smartliby.github.io/2020/04/04/kubeflow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
-    <id>https://smartliby.github.io/2020/04/04/kubeflow安装教程/</id>
+    <link href="https://blog.flyfox.top/2020/04/04/kubeflow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+    <id>https://blog.flyfox.top/2020/04/04/kubeflow安装教程/</id>
     <published>2020-04-04T12:21:11.000Z</published>
     <updated>2020-04-05T08:41:05.504Z</updated>
     
@@ -57,21 +57,21 @@
     
     </summary>
     
-      <category term="kubeflow" scheme="https://smartliby.github.io/categories/kubeflow/"/>
+      <category term="kubeflow" scheme="https://blog.flyfox.top/categories/kubeflow/"/>
     
     
-      <category term="k8s" scheme="https://smartliby.github.io/tags/k8s/"/>
+      <category term="k8s" scheme="https://blog.flyfox.top/tags/k8s/"/>
     
-      <category term="microk8s" scheme="https://smartliby.github.io/tags/microk8s/"/>
+      <category term="kubeflow" scheme="https://blog.flyfox.top/tags/kubeflow/"/>
     
-      <category term="kubeflow" scheme="https://smartliby.github.io/tags/kubeflow/"/>
+      <category term="microk8s" scheme="https://blog.flyfox.top/tags/microk8s/"/>
     
   </entry>
   
   <entry>
     <title>ubuntu 18.04安装microk8s教程</title>
-    <link href="https://smartliby.github.io/2020/04/03/microk8s%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
-    <id>https://smartliby.github.io/2020/04/03/microk8s安装教程/</id>
+    <link href="https://blog.flyfox.top/2020/04/03/microk8s%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+    <id>https://blog.flyfox.top/2020/04/03/microk8s安装教程/</id>
     <published>2020-04-03T12:21:11.000Z</published>
     <updated>2020-04-04T16:24:05.246Z</updated>
     
@@ -83,19 +83,19 @@
     
     </summary>
     
-      <category term="k8s" scheme="https://smartliby.github.io/categories/k8s/"/>
+      <category term="k8s" scheme="https://blog.flyfox.top/categories/k8s/"/>
     
     
-      <category term="k8s" scheme="https://smartliby.github.io/tags/k8s/"/>
+      <category term="k8s" scheme="https://blog.flyfox.top/tags/k8s/"/>
     
-      <category term="microk8s" scheme="https://smartliby.github.io/tags/microk8s/"/>
+      <category term="microk8s" scheme="https://blog.flyfox.top/tags/microk8s/"/>
     
   </entry>
   
   <entry>
     <title>Mac、Ubuntu系统的下载神器aria2</title>
-    <link href="https://smartliby.github.io/2019/05/12/Mac%E3%80%81Ubuntu%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8aria2/"/>
-    <id>https://smartliby.github.io/2019/05/12/Mac、Ubuntu系统的下载神器aria2/</id>
+    <link href="https://blog.flyfox.top/2019/05/12/Mac%E3%80%81Ubuntu%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8aria2/"/>
+    <id>https://blog.flyfox.top/2019/05/12/Mac、Ubuntu系统的下载神器aria2/</id>
     <published>2019-05-12T10:21:11.000Z</published>
     <updated>2019-05-16T13:48:00.938Z</updated>
     
@@ -107,19 +107,19 @@
     
     </summary>
     
-      <category term="Ubuntu" scheme="https://smartliby.github.io/categories/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://blog.flyfox.top/categories/Ubuntu/"/>
     
     
-      <category term="系统设置" scheme="https://smartliby.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/"/>
+      <category term="aria2" scheme="https://blog.flyfox.top/tags/aria2/"/>
     
-      <category term="aria2" scheme="https://smartliby.github.io/tags/aria2/"/>
+      <category term="系统设置" scheme="https://blog.flyfox.top/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu16.04系统工作环境设置</title>
-    <link href="https://smartliby.github.io/2017/03/11/Ubuntu16-04%E7%B3%BB%E7%BB%9F%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/"/>
-    <id>https://smartliby.github.io/2017/03/11/Ubuntu16-04系统工作环境设置/</id>
+    <link href="https://blog.flyfox.top/2017/03/11/Ubuntu16-04%E7%B3%BB%E7%BB%9F%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/"/>
+    <id>https://blog.flyfox.top/2017/03/11/Ubuntu16-04系统工作环境设置/</id>
     <published>2017-03-11T14:06:39.000Z</published>
     <updated>2019-04-22T15:23:58.733Z</updated>
     
@@ -132,19 +132,19 @@
     
     </summary>
     
-      <category term="Ubuntu" scheme="https://smartliby.github.io/categories/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://blog.flyfox.top/categories/Ubuntu/"/>
     
     
-      <category term="Linux" scheme="https://smartliby.github.io/tags/Linux/"/>
+      <category term="系统设置" scheme="https://blog.flyfox.top/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/"/>
     
-      <category term="系统设置" scheme="https://smartliby.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/"/>
+      <category term="Linux" scheme="https://blog.flyfox.top/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Flume1.7源码调试</title>
-    <link href="https://smartliby.github.io/2017/02/14/Flume1-7%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/"/>
-    <id>https://smartliby.github.io/2017/02/14/Flume1-7源码调试/</id>
+    <link href="https://blog.flyfox.top/2017/02/14/Flume1-7%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95/"/>
+    <id>https://blog.flyfox.top/2017/02/14/Flume1-7源码调试/</id>
     <published>2017-02-14T11:02:40.000Z</published>
     <updated>2019-04-22T15:23:58.813Z</updated>
     
@@ -156,17 +156,17 @@
     
     </summary>
     
-      <category term="Flume" scheme="https://smartliby.github.io/categories/Flume/"/>
+      <category term="Flume" scheme="https://blog.flyfox.top/categories/Flume/"/>
     
     
-      <category term="Flume" scheme="https://smartliby.github.io/tags/Flume/"/>
+      <category term="Flume" scheme="https://blog.flyfox.top/tags/Flume/"/>
     
   </entry>
   
   <entry>
     <title>java字符编码浅析</title>
-    <link href="https://smartliby.github.io/2016/07/14/java%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%B5%85%E6%9E%90/"/>
-    <id>https://smartliby.github.io/2016/07/14/java字符编码浅析/</id>
+    <link href="https://blog.flyfox.top/2016/07/14/java%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%B5%85%E6%9E%90/"/>
+    <id>https://blog.flyfox.top/2016/07/14/java字符编码浅析/</id>
     <published>2016-07-14T11:24:13.000Z</published>
     <updated>2019-04-22T15:23:58.781Z</updated>
     
@@ -181,17 +181,17 @@
     
     </summary>
     
-      <category term="java" scheme="https://smartliby.github.io/categories/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/categories/java/"/>
     
     
-      <category term="字符编码" scheme="https://smartliby.github.io/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"/>
+      <category term="字符编码" scheme="https://blog.flyfox.top/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"/>
     
   </entry>
   
   <entry>
     <title>设计模式19之 迭代器(Iterator)模式(行为模式)</title>
-    <link href="https://smartliby.github.io/2014/06/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F19%E4%B9%8B-%E8%BF%AD%E4%BB%A3%E5%99%A8-Iterator-%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/06/03/设计模式19之-迭代器-Iterator-模式-行为模式/</id>
+    <link href="https://blog.flyfox.top/2014/06/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F19%E4%B9%8B-%E8%BF%AD%E4%BB%A3%E5%99%A8-Iterator-%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/06/03/设计模式19之-迭代器-Iterator-模式-行为模式/</id>
     <published>2014-06-03T03:11:08.000Z</published>
     <updated>2019-04-22T15:23:58.789Z</updated>
     
@@ -204,19 +204,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="迭代器模式" scheme="https://smartliby.github.io/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
+      <category term="迭代器模式" scheme="https://blog.flyfox.top/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式18之 观察者(Observer)模式(行为模式)</title>
-    <link href="https://smartliby.github.io/2014/06/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F18%E4%B9%8B-%E8%A7%82%E5%AF%9F%E8%80%85-Observer-%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/06/02/设计模式18之-观察者-Observer-模式-行为模式/</id>
+    <link href="https://blog.flyfox.top/2014/06/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F18%E4%B9%8B-%E8%A7%82%E5%AF%9F%E8%80%85-Observer-%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/06/02/设计模式18之-观察者-Observer-模式-行为模式/</id>
     <published>2014-06-02T03:10:51.000Z</published>
     <updated>2019-04-22T15:23:58.845Z</updated>
     
@@ -228,19 +228,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="观察者模式" scheme="https://smartliby.github.io/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+      <category term="观察者模式" scheme="https://blog.flyfox.top/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式17之 模板方法(Template Method)模式(行为模式)</title>
-    <link href="https://smartliby.github.io/2014/06/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F17%E4%B9%8B-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95-Template-Method-%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/06/01/设计模式17之-模板方法-Template-Method-模式-行为模式/</id>
+    <link href="https://blog.flyfox.top/2014/06/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F17%E4%B9%8B-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95-Template-Method-%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/06/01/设计模式17之-模板方法-Template-Method-模式-行为模式/</id>
     <published>2014-06-01T03:10:33.000Z</published>
     <updated>2019-04-22T15:23:58.569Z</updated>
     
@@ -252,19 +252,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="模板方法模式" scheme="https://smartliby.github.io/tags/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
+      <category term="模板方法模式" scheme="https://blog.flyfox.top/tags/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式16之 策略(Strategy)模式(行为模式)</title>
-    <link href="https://smartliby.github.io/2014/05/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F16%E4%B9%8B-%E7%AD%96%E7%95%A5-Strategy-%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/05/29/设计模式16之-策略-Strategy-模式-行为模式/</id>
+    <link href="https://blog.flyfox.top/2014/05/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F16%E4%B9%8B-%E7%AD%96%E7%95%A5-Strategy-%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/05/29/设计模式16之-策略-Strategy-模式-行为模式/</id>
     <published>2014-05-29T03:10:17.000Z</published>
     <updated>2019-04-22T15:23:58.773Z</updated>
     
@@ -276,19 +276,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="策略模式" scheme="https://smartliby.github.io/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+      <category term="策略模式" scheme="https://blog.flyfox.top/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式15之 不变(Immutable)模式(行为模式)</title>
-    <link href="https://smartliby.github.io/2014/05/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F15%E4%B9%8B-%E4%B8%8D%E5%8F%98-Immutable-%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/05/28/设计模式15之-不变-Immutable-模式-行为模式/</id>
+    <link href="https://blog.flyfox.top/2014/05/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F15%E4%B9%8B-%E4%B8%8D%E5%8F%98-Immutable-%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/05/28/设计模式15之-不变-Immutable-模式-行为模式/</id>
     <published>2014-05-28T03:10:00.000Z</published>
     <updated>2019-04-22T15:23:58.761Z</updated>
     
@@ -300,19 +300,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="不变模式" scheme="https://smartliby.github.io/tags/%E4%B8%8D%E5%8F%98%E6%A8%A1%E5%BC%8F/"/>
+      <category term="不变模式" scheme="https://blog.flyfox.top/tags/%E4%B8%8D%E5%8F%98%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式14之 桥梁(Bridge)模式(结构模式)</title>
-    <link href="https://smartliby.github.io/2014/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F14%E4%B9%8B-%E6%A1%A5%E6%A2%81-Bridge-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/05/27/设计模式14之-桥梁-Bridge-模式-结构模式/</id>
+    <link href="https://blog.flyfox.top/2014/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F14%E4%B9%8B-%E6%A1%A5%E6%A2%81-Bridge-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/05/27/设计模式14之-桥梁-Bridge-模式-结构模式/</id>
     <published>2014-05-27T03:09:42.000Z</published>
     <updated>2019-04-22T15:23:58.669Z</updated>
     
@@ -325,19 +325,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="桥梁模式" scheme="https://smartliby.github.io/tags/%E6%A1%A5%E6%A2%81%E6%A8%A1%E5%BC%8F/"/>
+      <category term="桥梁模式" scheme="https://blog.flyfox.top/tags/%E6%A1%A5%E6%A2%81%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式13之 门面(Facade)模式(结构模式)</title>
-    <link href="https://smartliby.github.io/2014/05/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F13%E4%B9%8B-%E9%97%A8%E9%9D%A2-Facade-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/05/26/设计模式13之-门面-Facade-模式-结构模式/</id>
+    <link href="https://blog.flyfox.top/2014/05/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F13%E4%B9%8B-%E9%97%A8%E9%9D%A2-Facade-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/05/26/设计模式13之-门面-Facade-模式-结构模式/</id>
     <published>2014-05-26T03:09:23.000Z</published>
     <updated>2019-04-22T15:23:58.617Z</updated>
     
@@ -350,19 +350,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="门面模式" scheme="https://smartliby.github.io/tags/%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/"/>
+      <category term="门面模式" scheme="https://blog.flyfox.top/tags/%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式12之 享元(Flyweight)模式(结构模式)</title>
-    <link href="https://smartliby.github.io/2014/05/25/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F12%E4%B9%8B-%E4%BA%AB%E5%85%83-Flyweight-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/05/25/设计模式12之-享元-Flyweight-模式-结构模式/</id>
+    <link href="https://blog.flyfox.top/2014/05/25/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F12%E4%B9%8B-%E4%BA%AB%E5%85%83-Flyweight-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/05/25/设计模式12之-享元-Flyweight-模式-结构模式/</id>
     <published>2014-05-25T03:09:05.000Z</published>
     <updated>2019-04-22T15:23:58.601Z</updated>
     
@@ -376,19 +376,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="享元模式" scheme="https://smartliby.github.io/tags/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"/>
+      <category term="享元模式" scheme="https://blog.flyfox.top/tags/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式11之 代理(Proxy)模式(结构模式)</title>
-    <link href="https://smartliby.github.io/2014/05/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F11%E4%B9%8B-%E4%BB%A3%E7%90%86-Proxy-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/05/24/设计模式11之-代理-Proxy-模式-结构模式/</id>
+    <link href="https://blog.flyfox.top/2014/05/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F11%E4%B9%8B-%E4%BB%A3%E7%90%86-Proxy-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/05/24/设计模式11之-代理-Proxy-模式-结构模式/</id>
     <published>2014-05-24T03:08:47.000Z</published>
     <updated>2019-04-22T15:23:58.645Z</updated>
     
@@ -401,19 +401,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="代理模式" scheme="https://smartliby.github.io/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
+      <category term="代理模式" scheme="https://blog.flyfox.top/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式10之 装饰(Decorator)模式(结构模式)</title>
-    <link href="https://smartliby.github.io/2014/05/23/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F10%E4%B9%8B-%E8%A3%85%E9%A5%B0-Decorator-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/05/23/设计模式10之-装饰-Decorator-模式-结构模式/</id>
+    <link href="https://blog.flyfox.top/2014/05/23/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F10%E4%B9%8B-%E8%A3%85%E9%A5%B0-Decorator-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/05/23/设计模式10之-装饰-Decorator-模式-结构模式/</id>
     <published>2014-05-23T03:07:00.000Z</published>
     <updated>2019-04-22T15:23:58.709Z</updated>
     
@@ -426,19 +426,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="装饰模式" scheme="https://smartliby.github.io/tags/%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/"/>
+      <category term="装饰模式" scheme="https://blog.flyfox.top/tags/%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式09之 合成(Composite)模式(结构模式)</title>
-    <link href="https://smartliby.github.io/2014/05/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F09%E4%B9%8B-%E5%90%88%E6%88%90-Composite-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/05/22/设计模式09之-合成-Composite-模式-结构模式/</id>
+    <link href="https://blog.flyfox.top/2014/05/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F09%E4%B9%8B-%E5%90%88%E6%88%90-Composite-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/05/22/设计模式09之-合成-Composite-模式-结构模式/</id>
     <published>2014-05-22T03:06:02.000Z</published>
     <updated>2019-04-22T15:23:58.633Z</updated>
     
@@ -450,19 +450,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="合成模式" scheme="https://smartliby.github.io/tags/%E5%90%88%E6%88%90%E6%A8%A1%E5%BC%8F/"/>
+      <category term="合成模式" scheme="https://blog.flyfox.top/tags/%E5%90%88%E6%88%90%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式08之 适配器(Adapter)模式(结构模式)</title>
-    <link href="https://smartliby.github.io/2014/05/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F08%E4%B9%8B-%E9%80%82%E9%85%8D%E5%99%A8-Adapter-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/05/21/设计模式08之-适配器-Adapter-模式-结构模式/</id>
+    <link href="https://blog.flyfox.top/2014/05/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F08%E4%B9%8B-%E9%80%82%E9%85%8D%E5%99%A8-Adapter-%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/05/21/设计模式08之-适配器-Adapter-模式-结构模式/</id>
     <published>2014-05-21T03:05:37.000Z</published>
     <updated>2019-04-22T15:23:58.717Z</updated>
     
@@ -474,19 +474,19 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="原型模式" scheme="https://smartliby.github.io/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+      <category term="原型模式" scheme="https://blog.flyfox.top/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式07之 原型模式(创建模式)</title>
-    <link href="https://smartliby.github.io/2014/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F07%E4%B9%8B-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F-%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://smartliby.github.io/2014/05/20/设计模式07之-原型模式-创建模式/</id>
+    <link href="https://blog.flyfox.top/2014/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F07%E4%B9%8B-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F-%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.flyfox.top/2014/05/20/设计模式07之-原型模式-创建模式/</id>
     <published>2014-05-20T03:05:17.000Z</published>
     <updated>2019-04-22T15:23:58.549Z</updated>
     
@@ -498,12 +498,12 @@
     
     </summary>
     
-      <category term="设计模式" scheme="https://smartliby.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://blog.flyfox.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="https://smartliby.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.flyfox.top/tags/java/"/>
     
-      <category term="原型模式" scheme="https://smartliby.github.io/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+      <category term="原型模式" scheme="https://blog.flyfox.top/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
