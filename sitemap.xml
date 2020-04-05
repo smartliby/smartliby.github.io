@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://smartliby.github.io/2020/04/03/microk8s%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://smartliby.github.io/2020/04/05/%E9%80%9A%E8%BF%87%E9%98%BF%E9%87%8C%E4%BA%91%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E6%9C%8D%E5%8A%A1%E4%B8%8B%E8%BD%BDgcr-io%E9%95%9C%E5%83%8F/</loc>
     
-    <lastmod>2020-04-04T16:24:05.246Z</lastmod>
+    <lastmod>2020-04-05T08:46:15.685Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://smartliby.github.io/2020/04/04/kubeflow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
     
-    <lastmod>2020-04-04T16:23:34.151Z</lastmod>
+    <lastmod>2020-04-05T08:41:05.504Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smartliby.github.io/2020/04/03/microk8s%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2020-04-04T16:24:05.246Z</lastmod>
     
   </url>
   
