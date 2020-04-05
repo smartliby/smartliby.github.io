@@ -36,9 +36,9 @@
     
       <category term="k8s" scheme="https://smartliby.github.io/tags/k8s/"/>
     
-      <category term="microk8s" scheme="https://smartliby.github.io/tags/microk8s/"/>
-    
       <category term="kubeflow" scheme="https://smartliby.github.io/tags/kubeflow/"/>
+    
+      <category term="microk8s" scheme="https://smartliby.github.io/tags/microk8s/"/>
     
   </entry>
   
