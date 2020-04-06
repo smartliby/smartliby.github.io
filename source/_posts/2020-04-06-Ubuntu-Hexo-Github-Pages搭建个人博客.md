@@ -237,15 +237,17 @@ CDN 比较贵还不完美，不适合小流量网站，又不想换托管平台�
 
 接着在[zeit.co](https://zeit.co/)设置域名
 
-Selecting Your Project—>Navigating to Domain Settings—>Entering Your Chosen Domain—>Configuring the Domain
+Selecting Your Project—>Settings—>Domains—>Entering Your Chosen Domain—>Add the Domain
+
+![](/images/media/选区_074.png)
+
+这时候它会报错，因为你的域名还没有添加解析。这里，他们推荐的方式是让你的域名使用他们的Nameserver，或者说让他们提供DNS解析服务。但是我这里选择CNAME的方式。因为我一直使用的是cloudflare的DNS解析，我申请的域名之前是为梯子用的，cloudflare的CDN免费并且支持websocket，所以我这里就继续这么用了，在cloudflare上添加 CNAME 记录就行了，内容为上图的value值：`alias.zeit.co`。
+
+![](/images/media/选区_072.png)
+
+如果还是报错的话，你可以试着删除（先点击“Edit”按钮，然后点击“Remove”）后重新添加，如下图即表示设置成功了
 
 ![](/images/media/选区_069.png)
-
-到了这一步，接下来需要做的就是切换域名，修改 DNS 指向。
-
-我这里使用的是cloudflare的DNS功能，用其他的也可以，因为我申请的域名之前是为梯子用的，cloudflare的CDN免费并且支持websocket，所以我这里就继续这么用了，在cloudflare上添加CNAME 记录就行了。
-
-![](/images/media/选区_068.png)
 
 ## 百度爬取
 
