@@ -254,9 +254,6 @@ Selecting Your Project—>Navigating to Domain Settings—>Entering Your Chosen 
 ## 参考
 
 [1] 解决百度爬虫无法爬取 Github Pages 个人博客的问题：https://zpjiang.me/2020/01/15/let-baidu-index-github-page/
-
 [2] zeit.co 帮助文档：https://zeit.co/docs
-
 [3] 使用 zeit.co 托管 Hexo 静态博客：https://www.qtmuniao.com/2020/03/15/hexo-to-zeit-co/
-
 [4] 域名绑定：https://segmentfault.com/a/1190000011203711
