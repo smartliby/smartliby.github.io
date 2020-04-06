@@ -1147,11 +1147,9 @@ Interest from CD account: 470.795
         var busuanziSiteOffset = parseInt(54321);
         function fixCount() {
             if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                clearInterval(int);
                 $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
             }
             if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                clearInterval(int);
                 $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + busuanziSiteOffset);
             }
         }
