@@ -259,3 +259,4 @@ Selecting Your Project—>Settings—>Domains—>Entering Your Chosen Domain—>
 [2] zeit.co 帮助文档：https://zeit.co/docs
 [3] 使用 zeit.co 托管 Hexo 静态博客：https://www.qtmuniao.com/2020/03/15/hexo-to-zeit-co/
 [4] 域名绑定：https://segmentfault.com/a/1190000011203711
+[5] zeit域名解析：https://blog.solariar.tech/2020/how-this-site-work-v2/
