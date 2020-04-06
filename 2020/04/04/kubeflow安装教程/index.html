@@ -116,7 +116,7 @@
 
 
   <meta name="description" content="Kubeflow是Google推出的基于kubernetes环境下的机器学习组件，通过Kubeflow可以实现对TFJob等资源类型定义，可以像部署应用一样完成在TFJob分布式训练模型的过程。最初的设计是将Kubernetes和Tensorflow结合实现对Tensorflow分布式训练的支持。但是仅仅实现对Tensorflow的支持还是远远不够的，Kubeflow社区又陆续对各种深度学习框架进">
-<meta name="keywords" content="k8s,microk8s,kubeflow">
+<meta name="keywords" content="k8s,kubeflow,microk8s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kubeflow 1.0 安装教程">
 <meta property="og:url" content="https://blog.flyfox.top/2020/04/04/kubeflow安装教程/index.html">
@@ -687,9 +687,9 @@
           
             <a href="/tags/k8s/" rel="tag"><i class="fa fa-tags"></i> k8s</a>
           
-            <a href="/tags/microk8s/" rel="tag"><i class="fa fa-tags"></i> microk8s</a>
-          
             <a href="/tags/kubeflow/" rel="tag"><i class="fa fa-tags"></i> kubeflow</a>
+          
+            <a href="/tags/microk8s/" rel="tag"><i class="fa fa-tags"></i> microk8s</a>
           
         </div>
       
@@ -818,7 +818,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -893,7 +895,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">29</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1064,7 +1074,7 @@
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
-        var int = setInterval(fixCount, 300);
+        var int = setInterval(fixCount, 500);
         var busuanziSiteOffset = parseInt(54321);
         function fixCount() {
             if ($("#busuanzi_container_site_pv").css("display") != "none") {
