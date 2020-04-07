@@ -71,10 +71,10 @@ npm install
 | :---------------------- | :------------------------------------------------: | :----: |
 | hexo init "folder-name" |                    新建一个网站                    |        |
 | hexo new "title-name"   |                    新建一篇文章                    |        |
+| hexo clean              |                    清除缓存文件                    |        |
 | hexo generate           |                    生成静态文件                    | hexo g |
 | hexo server             | 启动服务器，默认服务器网址：http://localhost:4000/ | hexo s |
 | hexo deploy             |                      部署网站                      | hexo d |
-| hexo clean              |                    清楚缓存文件                    |        |
 
 ### 更换主题
 
