@@ -90,9 +90,9 @@
     
       <category term="k8s" scheme="https://blog.flyfox.top/tags/k8s/"/>
     
-      <category term="microk8s" scheme="https://blog.flyfox.top/tags/microk8s/"/>
-    
       <category term="kubeflow" scheme="https://blog.flyfox.top/tags/kubeflow/"/>
+    
+      <category term="microk8s" scheme="https://blog.flyfox.top/tags/microk8s/"/>
     
   </entry>
   
