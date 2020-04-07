@@ -115,7 +115,7 @@ git clone https://github.com/ziahamza/webui-aria2
   
 # 5.如何进行下载操作
 随便打开一个百度网盘的链接，会发现网页上多出一个「导出下载」按钮，点击它弹出的「ARIA2 RPC」就自动添加到你的下载队列里了，然后利用 这里 提供的网页界面管理你的下载任务，如下图所示，你可以利用图形界面进行许多操作：
-![aria2](/images/media/aria2.png)
+![](/images/media/aria2.png)
 
 # 6.关闭 aria2
 如果你想关掉后台的 aria2，可以到活动监视器中找到 aria2c 杀掉
