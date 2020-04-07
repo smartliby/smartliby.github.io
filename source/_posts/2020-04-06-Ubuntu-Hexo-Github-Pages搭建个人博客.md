@@ -37,7 +37,7 @@ v8.10.0
 
 ## 安装Hexo
 
-Hexo是一个基于nodw.js的快速、简介且高效的博客框架，支持Markdown解析文章。简言之，hexo将Markdown编写的文章生成为静态html页面，然后部署到github。
+Hexo是一个基于node.js的快速、简洁且高效的博客框架，支持Markdown解析文章。简言之，hexo将Markdown编写的文章生成为静态html页面，然后部署到github。
 安装hexo：`sudo npm install -g hexo`。
 在指定文件夹新建所需的文件：
 
