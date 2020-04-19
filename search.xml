@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[通过Travis CI自动构建镜像到阿里云镜像库和dockehub]]></title>
     <url>%2F2020%2F04%2F19%2F%E9%80%9A%E8%BF%87Travis-CI%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%BA%93%E5%92%8Cdockehub%2F</url>
-    <content type="text"><![CDATA[其实之前我已经写过一篇关于通过阿里云镜像库下载gcr.io镜像的文章，但是该方法有一个问题，每次需要新的镜像都需要在阿里云镜像库手动创建，太麻烦了，这篇文章通过Travis CI可以自动构建镜像到阿里云，方便好用 创建github仓库首先登录github创建一个仓库，名称自定义，仓库包含如下2个文件： img-list.txt 外网镜像列表文件.travis.yaml travisCI自动构建文件示例仓库：https://github.com/smartliby/pull-docker-images .travis.yaml 内容如下，主要从国外镜像仓库pull镜像，打tag，并push到阿里云或dockerhub 1234567891011121314151617181920212223242526272829303132language: bashservices: - dockerenv: global: # change the registry name and username/password to yourself&apos;s. - DOCKER_HUB=smartliby - ALI_REGISTRY=registry.cn-hangzhou.aliyuncs.com/smartlibybefore_script: - echo &quot;$DOCKER_PASSWORD&quot; | docker login -u &quot;$DOCKER_USERNAME&quot; --password-stdin - echo &quot;$ALI_PASSWORD&quot; | docker login &quot;$ALI_REGISTRY&quot; -u &quot;$ALI_USERNAME&quot; --password-stdin script: - echo &quot;start pull and retag and push&quot; - | for image in $(cat img-list.txt) do image_name=$&#123;image##*/&#125; image_name=$&#123;image_name%@*&#125; docker pull $image docker tag $image $DOCKER_HUB/$image_name echo $ALI_REGISTRY docker tag $image $ALI_REGISTRY/$image_name # push到dockerhub docker push $DOCKER_HUB/$image_name # push到阿里云仓库 docker push $ALI_REGISTRY/$image_name done .travis.yaml文件监测github仓库的代码变动，当有代码变动时比如img-list.txt写入新的镜像列表时将触发tarvis的自动构建这里需要登录阿里云或dockerhub才能执行docker push操作，其中$ALI_USERNAME这类变量在TravisCI管理界面定义好即可。 Travis CI配置访问travis官网： https://www.travis-ci.com， 使用github账号登录。 开启需要进行自动化构建的仓库并设置$ALI_USERNAME这类变量即可 当对github仓库执行git commit、git push操作时将自动触发构建，执行仓库中的脚本 登录阿里云或dockerhub查看，imagepath.txt 列表中的镜像已经成功被push上来 参考[1] https://blog.csdn.net/networken/article/details/84571373]]></content>
+    <content type="text"><![CDATA[其实之前我已经写过一篇关于通过阿里云镜像库下载gcr.io镜像的文章，但是该方法有一个问题，每次需要新的镜像都需要在阿里云镜像库手动创建，太麻烦了，这篇文章通过Travis CI可以自动构建镜像到阿里云，方便好用 创建github仓库首先登录github创建一个仓库，名称自定义，仓库包含如下2个文件： img-list.txt 外网镜像列表文件.travis.yaml travisCI自动构建文件示例仓库：https://github.com/smartliby/pull-docker-images .travis.yaml 内容如下，主要从国外镜像仓库pull镜像，打tag，并push到阿里云或dockerhub 1234567891011121314151617181920212223242526272829303132language: bashservices: - dockerenv: global: # change the registry name and username/password to yourself&apos;s. - DOCKER_HUB=smartliby - ALI_REGISTRY=registry.cn-hangzhou.aliyuncs.com/smartlibybefore_script: - echo &quot;$DOCKER_PASSWORD&quot; | docker login -u &quot;$DOCKER_USERNAME&quot; --password-stdin - echo &quot;$ALI_PASSWORD&quot; | docker login &quot;$ALI_REGISTRY&quot; -u &quot;$ALI_USERNAME&quot; --password-stdin script: - echo &quot;start pull and retag and push&quot; - | for image in $(cat img-list.txt) do image_name=$&#123;image##*/&#125; image_name=$&#123;image_name%@*&#125; docker pull $image docker tag $image $DOCKER_HUB/$image_name echo $ALI_REGISTRY docker tag $image $ALI_REGISTRY/$image_name # push到dockerhub docker push $DOCKER_HUB/$image_name # push到阿里云仓库 docker push $ALI_REGISTRY/$image_name done .travis.yaml文件监测github仓库的代码变动，当有代码变动时比如img-list.txt写入新的镜像列表时将触发tarvis的自动构建这里需要登录阿里云或dockerhub才能执行docker push操作，其中$ALI_USERNAME这类变量在TravisCI管理界面定义好即可。 Travis CI配置访问travis官网： https://www.travis-ci.com， 使用github账号登录。 开启需要进行自动化构建的仓库并设置$ALI_USERNAME这类变量即可 当对github仓库执行git commit、git push操作时将自动触发构建，执行仓库中的脚本 登录阿里云或dockerhub查看，img-list.txt 列表中的镜像已经成功被push上来 参考[1] https://blog.csdn.net/networken/article/details/84571373]]></content>
       <categories>
         <category>k8s</category>
       </categories>
@@ -22,8 +22,8 @@
       </categories>
       <tags>
         <tag>k8s</tag>
-        <tag>ubuntu</tag>
         <tag>miniKF</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -47,8 +47,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>ubuntu</tag>
+        <tag>hexo</tag>
         <tag>gitHub pages</tag>
         <tag>zeit.co</tag>
       </tags>
@@ -75,8 +75,8 @@
       </categories>
       <tags>
         <tag>k8s</tag>
-        <tag>microk8s</tag>
         <tag>kubeflow</tag>
+        <tag>microk8s</tag>
       </tags>
   </entry>
   <entry>
