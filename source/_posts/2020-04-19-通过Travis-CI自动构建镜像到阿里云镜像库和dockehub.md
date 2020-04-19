@@ -74,7 +74,7 @@ script:
 
 ![](/images/media/选区_086.png)
 
-登录阿里云或dockerhub查看，imagepath.txt 列表中的镜像已经成功被push上来
+登录阿里云或dockerhub查看，img-list.txt 列表中的镜像已经成功被push上来
 
 ![](/images/media/选区_087.png)
 
