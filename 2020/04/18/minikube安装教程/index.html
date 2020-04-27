@@ -116,7 +116,7 @@
 
 
   <meta name="description" content="minikube 是 K8S 官方为了开发者能在个人电脑上运行 K8S 而提供的一套工具。实现上是通过 Go 语言编写，通过调用虚拟化管理程序，创建出一个运行在虚拟机内的单节点集群。">
-<meta name="keywords" content="k8s,ubuntu,minikube">
+<meta name="keywords" content="k8s,minikube,ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="minikube安装教程">
 <meta property="og:url" content="https://blog.flyfox.top/2020/04/18/minikube安装教程/index.html">
@@ -124,7 +124,7 @@
 <meta property="og:description" content="minikube 是 K8S 官方为了开发者能在个人电脑上运行 K8S 而提供的一套工具。实现上是通过 Go 语言编写，通过调用虚拟化管理程序，创建出一个运行在虚拟机内的单节点集群。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.flyfox.top/images/media/选区_084.png">
-<meta property="og:updated_time" content="2020-04-19T07:35:39.474Z">
+<meta property="og:updated_time" content="2020-04-27T01:40:14.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="minikube安装教程">
 <meta name="twitter:description" content="minikube 是 K8S 官方为了开发者能在个人电脑上运行 K8S 而提供的一套工具。实现上是通过 Go 语言编写，通过调用虚拟化管理程序，创建出一个运行在虚拟机内的单节点集群。">
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-04-19 15:35:39" itemprop="dateModified" datetime="2020-04-19T15:35:39+08:00">2020-04-19</time>
+                <time title="修改时间：2020-04-27 09:40:14" itemprop="dateModified" datetime="2020-04-27T09:40:14+08:00">2020-04-27</time>
               
             
           </span>
@@ -527,7 +527,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.4k</span>
+                <span title="本文字数">5.6k</span>
               
 
               
@@ -592,6 +592,8 @@
 <p>执行<code>sudo minikube dashboard</code>打开Kubernetes控制台</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">🤔  Verifying dashboard health ...</span><br><span class="line">🚀  Launching proxy ...</span><br><span class="line">🤔  Verifying proxy health ...</span><br><span class="line">🎉  Opening http://127.0.0.1:41123/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/ in your default browser...</span><br></pre></td></tr></table></figure>
 <p><img src="/images/media/选区_084.png" alt></p>
+<p>为了安全起见，默认情况下dashboard已经不向外提供服务，在我们学习过程中，总有些不方便，这时我们可以利用 kubectl proxy 命令来实现外网提供服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup kubectl proxy --address=&apos;0.0.0.0&apos; --port=8888 --accept-hosts=&apos;^*$&apos; &gt; dashboard.log &amp;</span><br></pre></td></tr></table></figure>
 <h4 id="minikube基本操作"><a href="#minikube基本操作" class="headerlink" title="minikube基本操作"></a>minikube基本操作</h4><p>检测集群状态</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kubectl cluster-info</span><br></pre></td></tr></table></figure>
 <p>minikube的配置文件在如下路径</p>
@@ -691,9 +693,9 @@
           
             <a href="/tags/k8s/" rel="tag"><i class="fa fa-tags"></i> k8s</a>
           
-            <a href="/tags/ubuntu/" rel="tag"><i class="fa fa-tags"></i> ubuntu</a>
-          
             <a href="/tags/minikube/" rel="tag"><i class="fa fa-tags"></i> minikube</a>
+          
+            <a href="/tags/ubuntu/" rel="tag"><i class="fa fa-tags"></i> ubuntu</a>
           
         </div>
       
